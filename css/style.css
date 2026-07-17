@@ -472,7 +472,8 @@ ul, ol {
   gap: var(--space-lg);
 }
 
-.product-card {
+.product-card, .accessory-card {
+  cursor: pointer;
   background: var(--white);
   border-radius: var(--radius-lg);
   overflow: hidden;

@@ -15,12 +15,13 @@
 ```
 .
 ├── index.html            # 官网首页（产品 / 配件 / 升级 / 场景）
+├── product.html          # 商品详情页（仿亚马逊：大图 / 价格 / 卖点 / 规格 / 相关推荐）
 ├── cart.html             # 购物车
 ├── checkout.html         # 结算
 ├── admin.html            # 电商管理后台（上架/下架/改价/促销）
-├── css/                  # 样式
-├── js/                   # 前端逻辑（i18n / store / cart）
-├── assets/img/           # 产品与场景渲染图
+├── css/                  # 样式（style.css 站点 / product.css 详情页）
+├── js/                   # 前端逻辑（i18n / store / cart / product）
+├── assets/img/           # 产品与场景渲染图（配件为白底真实产品图）
 ├── data/products.json    # 商品数据源（单一事实来源）
 ├── server.js             # 本地开发服务器（与线上 API 同源）
 ├── api/                  # Vercel Serverless Functions

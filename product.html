@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TailFin Marine | 商品详情</title>
+  <meta name="description" content="TailFin Marine 配件与耗材详情页：真实产品图、规格参数、一键加购。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230F6E56'/><text x='16' y='22' text-anchor='middle' fill='white' font-size='18' font-weight='bold'>T</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+
+<!-- ============ Navbar ============ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="7" fill="#0F6E56"/><path d="M8 20 L16 8 L24 20 L20 20 L16 14 L12 20 Z" fill="white"/><circle cx="16" cy="24" r="2" fill="#EF9F27"/></svg>
+      <span>TailFin Marine</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#products" data-i18n="nav_products">产品</a>
+      <a href="index.html#features" data-i18n="nav_features">特性</a>
+      <a href="index.html#specs" data-i18n="nav_specs">规格</a>
+      <a href="index.html#modular" data-i18n="nav_modular">模块化</a>
+      <a href="index.html#usecases" data-i18n="nav_usecases">场景</a>
+      <a href="index.html#contact" data-i18n="nav_contact">联系我们</a>
+    </div>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-lang="zh" onclick="applyLanguage('zh')">中文</button>
+      <button class="lang-toggle" data-lang="en" onclick="applyLanguage('en')">EN</button>
+      <a href="cart.html" class="cart-btn">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        <span data-i18n="nav_cart">购物车</span>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============ Product Detail ============ -->
+<main class="product-detail-page">
+  <div class="container" id="pd-root"><!-- rendered by js/product.js --></div>
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="7" fill="#0F6E56"/><path d="M8 20 L16 8 L24 20 L20 20 L16 14 L12 20 Z" fill="white"/><circle cx="16" cy="24" r="2" fill="#EF9F27"/></svg>
+          TailFin Marine
+        </h3>
+        <p data-i18n="footer_desc">TailFin Marine 致力于让每位北美钓客，在车斗里就能体面、干净地处理好每一次鱼获。</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h10M7 16h6M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h10M7 16h6M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_products">产品</h4>
+        <ul>
+          <li><a href="index.html#products">Mini Lite — $149</a></li>
+          <li><a href="index.html#products">Standard — $499</a></li>
+          <li><a href="index.html#products">Pro Flagship — $999</a></li>
+          <li><a href="index.html#accessories" data-i18n="footer_shipping">配件 &amp; 耗材</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_company">公司</h4>
+        <ul>
+          <li><a href="#" data-i18n="footer_about">关于我们</a></li>
+          <li><a href="#" data-i18n="footer_careers">招贤纳士</a></li>
+          <li><a href="#" data-i18n="footer_contact">联系方式</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_support">支持</h4>
+        <ul>
+          <li><a href="#" data-i18n="footer_warranty">保修政策</a></li>
+          <li><a href="#" data-i18n="footer_returns">退换货</a></li>
+          <li><a href="#" data-i18n="footer_faq">常见问题</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 TailFin Marine. <span data-i18n="footer_rights">保留所有权利。</span></p>
+      <p>Designed in USA · Manufactured with precision · <a href="admin.html" style="color:var(--teal);text-decoration:none;">商家管理后台 ↗</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>

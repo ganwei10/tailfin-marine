@@ -76,7 +76,7 @@ function renderProducts() {
     const features = (PRODUCT_FEATURES[p.id] && PRODUCT_FEATURES[p.id][L]) || [];
     const featured = p.id === 'pro' ? ' featured' : '';
     const badge = p.id === 'pro' ? ' data-badge="BEST SELLER"' : '';
-    return `<div class="product-card${featured}"${badge}>
+    return `<div class="product-card${featured}"${badge} data-open-product="${p.id}">
       <div class="product-visual ${tier}">
         <img src="${p.image}" alt="${p.name[L] || p.name.en}">
       </div>
@@ -103,7 +103,7 @@ function renderAccessories() {
   const list = Object.values(CATALOG).filter(p => p.type === 'accessory');
   if (list.length === 0) { grid.innerHTML = ''; return; }
   grid.innerHTML = list.map(p => `
-    <div class="accessory-card">
+    <div class="accessory-card" data-open-product="${p.id}">
       <div class="accessory-card-img"><img src="${p.image}" alt="${p.name[L] || p.name.en}"></div>
       <div class="accessory-card-body">
         <h4 class="accessory-card-name">${p.name[L] || p.name.en}</h4>
@@ -135,6 +135,18 @@ function syncUpgradeKitPrice() {
 function bindAddToCart() {
   document.removeEventListener('click', onAddClick);
   document.addEventListener('click', onAddClick);
+}
+
+function bindOpenProduct() {
+  document.removeEventListener('click', onCardOpen);
+  document.addEventListener('click', onCardOpen);
+}
+function onCardOpen(e) {
+  if (e.target.closest('[data-add-cart]')) return; // let add-to-cart handle the click
+  const card = e.target.closest('[data-open-product]');
+  if (!card) return;
+  const id = card.getAttribute('data-open-product');
+  window.location.href = 'product.html?id=' + encodeURIComponent(id);
 }
 function onAddClick(e) {
   const btn = e.target.closest('[data-add-cart]');
@@ -172,6 +184,7 @@ async function initCatalog() {
   if (typeof renderCheckoutSummary === 'function' && document.getElementById('checkout-summary')) renderCheckoutSummary();
 
   bindAddToCart();
+  bindOpenProduct();
 
   // Re-render on language switch
   const obs = new MutationObserver(() => {
@@ -182,6 +195,8 @@ async function initCatalog() {
     if (typeof renderCheckoutSummary === 'function' && document.getElementById('checkout-summary')) renderCheckoutSummary();
   });
   obs.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+
+  window.dispatchEvent(new Event('catalog:ready'));
 }
 
 if (document.readyState === 'loading') {
