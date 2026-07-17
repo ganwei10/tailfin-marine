@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TailFin Marine | 卡车尾门移动鱼类加工工作站</title>
+  <meta name="description" content="专为北美皮卡与SUV车主打造的移动鱼类加工工作站。从去鳞、冲洗到真空密封，在车斗里一站式完成，干净又省心。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230F6E56'/><text x='16' y='22' text-anchor='middle' fill='white' font-size='18' font-weight='bold'>T</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ Navbar ============ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="7" fill="#0F6E56"/><path d="M8 20 L16 8 L24 20 L20 20 L16 14 L12 20 Z" fill="white"/><circle cx="16" cy="24" r="2" fill="#EF9F27"/></svg>
+      <span>TailFin Marine</span>
+    </a>
+    <div class="nav-links">
+      <a href="#products" data-i18n="nav_products">产品</a>
+      <a href="#features" data-i18n="nav_features">特性</a>
+      <a href="#specs" data-i18n="nav_specs">规格</a>
+      <a href="#modular" data-i18n="nav_modular">模块化</a>
+      <a href="#usecases" data-i18n="nav_usecases">场景</a>
+      <a href="#contact" data-i18n="nav_contact">联系我们</a>
+    </div>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-lang="zh" onclick="applyLanguage('zh')">中文</button>
+      <button class="lang-toggle" data-lang="en" onclick="applyLanguage('en')">EN</button>
+      <a href="cart.html" class="cart-btn">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        <span data-i18n="nav_cart">购物车</span>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============ Hero ============ -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 data-i18n="hero_title">卡车尾门移动鱼类加工工作站</h1>
+      <p class="hero-subtitle" data-i18n="hero_subtitle">从码头到车斗，一站式完成去鳞、冲洗、切割、真空密封。专为北美硬核钓客设计。</p>
+      <div class="hero-badges">
+        <span class="hero-badge">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          <span data-i18n="hero_badge1">适配 DECKED / BedSlide</span>
+        </span>
+        <span class="hero-badge">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          <span data-i18n="hero_badge2">IPX6 全防水</span>
+        </span>
+        <span class="hero-badge">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          <span data-i18n="hero_badge3">316 不锈钢盐雾认证</span>
+        </span>
+        <span class="hero-badge">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          <span data-i18n="hero_badge4">按需升级 · 灵活扩展</span>
+        </span>
+      </div>
+      <div class="hero-cta">
+        <a href="#products" class="btn btn-primary btn-lg">
+          <span data-i18n="hero_cta1">探索产品线</span>
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="#specs" class="btn btn-secondary btn-lg" data-i18n="hero_cta2">查看技术规格</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="assets/img/hero-tailgate.png" alt="TailFin Marine on truck tailgate — descale, fillet, vacuum seal">
+    </div>
+  </div>
+</section>
+
+<!-- ============ Products ============ -->
+<section class="section products" id="products">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="products_tag">产品矩阵</span>
+      <h2 class="section-title" data-i18n="products_title">Good · Better · Best 三档覆盖</h2>
+      <p class="section-subtitle" data-i18n="products_subtitle">从 $149 的口袋去鳞机，到 $999 的移动加工厂——总有一款匹配你的钓法和预算。</p>
+    </div>
+
+    <div class="product-grid" id="product-grid"><!-- rendered by js/store.js --></div>
+  </div>
+</section>
+
+<!-- ============ Features ============ -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="features_tag">核心特性</span>
+      <h2 class="section-title" data-i18n="features_title">为什么选择 TailFin Marine</h2>
+      <p class="section-subtitle" data-i18n="features_subtitle">六大设计，覆盖你从去鳞到密封的每一步。</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon teal">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z M3 7l2-3h14l2 3"/></svg>
+        </div>
+        <h3 class="feature-title" data-i18n="feat1_title">皮卡完美适配</h3>
+        <p class="feature-desc" data-i18n="feat1_desc">箱体高度严格控制在 26cm，完美推入 DECKED 抽屉、BedSlide 滑轨和 Tonneau Cover 盖下。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon blue">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+        </div>
+        <h3 class="feature-title" data-i18n="feat2_title">IPX6 高压冲洗</h3>
+        <p class="feature-desc" data-i18n="feat2_desc">闭合状态 IPX6 级防水，直接用高压水枪冲洗鱼鳞血水，不留死角。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon amber">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="feature-title" data-i18n="feat3_title">316 海军级不锈钢</h3>
+        <p class="feature-desc" data-i18n="feat3_desc">全部锁扣、合页、螺丝采用 316 不锈钢，通过 72 小时盐雾测试，无惧海水腐蚀。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon teal">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 3h8l-1 9h-6L8 3z"/></svg>
+        </div>
+        <h3 class="feature-title" data-i18n="feat4_title">循环给水系统</h3>
+        <p class="feature-desc" data-i18n="feat4_desc">12V 自吸隔膜泵，3米 PU 软管直接吸湖水/海水，砧板导流槽排水。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon amber">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3 class="feature-title" data-i18n="feat5_title">快装卡扣 · 一插即用</h3>
+        <p class="feature-desc" data-i18n="feat5_desc">多瓣式快装卡扣接口，去鳞刀头/动力鱼刀共用，专用防穿刺真空袋锁定复购。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon blue">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <h3 class="feature-title" data-i18n="feat6_title">安全防误触</h3>
+        <p class="feature-desc" data-i18n="feat6_desc">双击启动 + 物理保险扣，颠簸车斗内不误触发；卡死自动断电，一键重置。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Tech Specs ============ -->
+<section class="section tech-specs" id="specs">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="specs_tag">技术规格</span>
+      <h2 class="section-title" data-i18n="specs_title">工业级参数一览</h2>
+      <p class="section-subtitle" data-i18n="specs_subtitle">每一项参数都经过北美户外实战验证。</p>
+    </div>
+    <div class="specs-container">
+      <div class="specs-visual">
+        <img src="assets/img/pro-product.png" alt="Pro workstation — isometric view showing dimensions and modules">
+      </div>
+      <div class="specs-table">
+        <div class="spec-row"><span class="spec-label" data-i18n="spec_dims">箱体尺寸</span><span class="spec-value"><span class="highlight">80 × 44 × 26 cm</span></span></div>
+        <div class="spec-row"><span class="spec-label" data-i18n="spec_material">箱体材质</span><span class="spec-value">双层 ABS+PC 滚塑, 不锈钢发泡保温</span></div>
+        <div class="spec-row"><span class="spec-label" data-i18n="spec_hardware">金属五金</span><span class="spec-value"><span class="highlight">316 海军级不锈钢</span> · 72h 盐雾测试</span></div>
+        <div class="spec-row"><span class="spec-label" data-i18n="spec_waterproof">防护等级</span><span class="spec-value"><span class="highlight">IPX6</span> (闭合状态)</span></div>
+        <div class="spec-row"><span class="spec-label" data-i18n="spec_board">砧板</span><span class="spec-value">食品级 HDPE ≥1.5cm, 导流槽 + 双排量尺</span></div>
+        <div class="spec-row"><span class="spec-label" data-i18n="spec_pump">水泵</span><span class="spec-value">12V 自吸隔膜泵, ≥5L/min, 扬程 2m</span></div>
+        <div class="spec-row"><span class="spec-label" data-i18n="spec_scaler_std">去鳞机(基础)</span><span class="spec-value">12V 100W 有刷, 316SS 滚齿, PC 防溅罩</span></div>
+        <div class="spec-row"><span class="spec-label" data-i18n="spec_scaler_pro">去鳞机(旗舰)</span><span class="spec-value"><span class="highlight">24V 200W 无刷</span>高扭矩</span></div>
+        <div class="spec-row"><span class="spec-label" data-i18n="spec_knife">动力鱼刀</span><span class="spec-value">12V 往复式, 防水航空插口供电 (Pro)</span></div>
+        <div class="spec-row"><span class="spec-label" data-i18n="spec_sealer">真空密封</span><span class="spec-value">≥-75kPa, 隐藏式液体收集盒 (Pro)</span></div>
+        <div class="spec-row"><span class="spec-label" data-i18n="spec_battery">电池(旗舰)</span><span class="spec-value">24V 6S1P 50Wh, 离网 ≥2h</span></div>
+        <div class="spec-row"><span class="spec-label" data-i18n="spec_charging">充电</span><span class="spec-value">BMS: 110V AC + 12V DC 双充</span></div>
+        <div class="spec-row"><span class="spec-label" data-i18n="spec_power_std">供电(基础)</span><span class="spec-value">5m 14AWG 硅胶线 → 点烟器 12V</span></div>
+        <div class="spec-row"><span class="spec-label" data-i18n="spec_safety">安全保护</span><span class="spec-value">双击启动, 卡死断电, 全面灌胶, 一键重置</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Modular System ============ -->
+<section class="section" id="modular">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="modular_tag">模块化系统</span>
+      <h2 class="section-title" data-i18n="modular_title">一套系统 · 按需搭配</h2>
+      <p class="section-subtitle" data-i18n="modular_subtitle">同一个坚固平台，中央功能仓可随时加装真空密封或储物模块——从基础款起步，随需求升级。</p>
+    </div>
+    <div class="modular-diagram">
+      <svg viewBox="0 0 680 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Base Platform -->
+        <rect x="40" y="20" width="600" height="120" rx="12" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+        <text x="60" y="42" fill="#0F6E56" font-size="14" font-weight="500">Base Platform — 100% Shared</text>
+
+        <!-- Base modules -->
+        <g transform="translate(60, 55)">
+          <rect width="100" height="70" rx="6" fill="#fff" stroke="#0F6E56" stroke-width="0.5"/>
+          <text x="50" y="25" text-anchor="middle" fill="#212529" font-size="12">Box Body</text>
+          <text x="50" y="40" text-anchor="middle" fill="#868e96" font-size="10">ABS+PC</text>
+          <text x="50" y="55" text-anchor="middle" fill="#868e96" font-size="10">80x44x26cm</text>
+        </g>
+        <g transform="translate(175, 55)">
+          <rect width="100" height="70" rx="6" fill="#fff" stroke="#0F6E56" stroke-width="0.5"/>
+          <text x="50" y="25" text-anchor="middle" fill="#212529" font-size="12">HDPE Board</text>
+          <text x="50" y="40" text-anchor="middle" fill="#868e96" font-size="10">Drainage</text>
+          <text x="50" y="55" text-anchor="middle" fill="#868e96" font-size="10">Ruler</text>
+        </g>
+        <g transform="translate(290, 55)">
+          <rect width="100" height="70" rx="6" fill="#fff" stroke="#0F6E56" stroke-width="0.5"/>
+          <text x="50" y="25" text-anchor="middle" fill="#212529" font-size="12">Water Pump</text>
+          <text x="50" y="40" text-anchor="middle" fill="#868e96" font-size="10">12V 5L/min</text>
+          <text x="50" y="55" text-anchor="middle" fill="#868e96" font-size="10">3m PU hose</text>
+        </g>
+        <g transform="translate(405, 55)">
+          <rect width="100" height="70" rx="6" fill="#fff" stroke="#0F6E56" stroke-width="0.5"/>
+          <text x="50" y="25" text-anchor="middle" fill="#212529" font-size="12">PCBA</text>
+          <text x="50" y="40" text-anchor="middle" fill="#868e96" font-size="10">Potted</text>
+          <text x="50" y="55" text-anchor="middle" fill="#868e96" font-size="10">BMS</text>
+        </g>
+        <g transform="translate(520, 55)">
+          <rect width="100" height="70" rx="6" fill="#fff" stroke="#0F6E56" stroke-width="0.5"/>
+          <text x="50" y="25" text-anchor="middle" fill="#212529" font-size="12">Tie-Down</text>
+          <text x="50" y="40" text-anchor="middle" fill="#868e96" font-size="10">316 SS</text>
+          <text x="50" y="55" text-anchor="middle" fill="#868e96" font-size="10">Ratchet</text>
+        </g>
+
+        <!-- Upgrade path: Standard + Kit -> Pro -->
+        <line x1="40" y1="150" x2="640" y2="150" stroke="#dee2e6" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="340" y="165" text-anchor="middle" fill="#adb5bd" font-size="11">Dual-Tier Center Bay · Pogo Pin 盲插叠层总线</text>
+
+        <!-- Standard box -->
+        <g transform="translate(55, 178)">
+          <rect width="240" height="180" rx="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5"/>
+          <text x="120" y="26" text-anchor="middle" fill="#185FA5" font-size="14" font-weight="700">STANDARD</text>
+          <text x="120" y="48" text-anchor="middle" fill="#0C447C" font-size="18" font-weight="800">$499</text>
+          <rect x="58" y="64" width="124" height="94" rx="6" fill="#fff" stroke="#185FA5" stroke-width="0.5"/>
+          <text x="120" y="80" text-anchor="middle" fill="#adb5bd" font-size="9">CENTER BAY</text>
+          <rect x="66" y="86" width="108" height="30" rx="4" fill="#185FA5" opacity="0.15" stroke="#185FA5"/>
+          <text x="120" y="105" text-anchor="middle" font-size="10">储物抽屉（上槽）</text>
+          <rect x="66" y="120" width="108" height="30" rx="4" fill="#f1f3f5" stroke="#dee2e6" stroke-dasharray="3,2"/>
+          <text x="120" y="139" text-anchor="middle" fill="#adb5bd" font-size="10">下槽：空（可加装）</text>
+          <text x="120" y="176" text-anchor="middle" font-size="10">12V 100W 有刷去鳞机</text>
+          <text x="120" y="190" text-anchor="middle" fill="#868e96" font-size="9">接点烟器 · 有线</text>
+        </g>
+
+        <!-- Pro box -->
+        <g transform="translate(385, 178)">
+          <rect width="240" height="180" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="2"/>
+          <text x="120" y="26" text-anchor="middle" fill="#0F6E56" font-size="14" font-weight="700">PRO FLAGSHIP</text>
+          <text x="120" y="48" text-anchor="middle" fill="#085041" font-size="18" font-weight="800">$999</text>
+          <rect x="58" y="64" width="124" height="94" rx="6" fill="#fff" stroke="#0F6E56" stroke-width="0.5"/>
+          <text x="120" y="80" text-anchor="middle" fill="#adb5bd" font-size="9">CENTER BAY</text>
+          <rect x="66" y="86" width="108" height="30" rx="4" fill="#0F6E56" opacity="0.15" stroke="#0F6E56"/>
+          <text x="120" y="105" text-anchor="middle" font-size="10">真空 cartridge（上槽）</text>
+          <rect x="66" y="120" width="108" height="30" rx="4" fill="#0F6E56" opacity="0.15" stroke="#0F6E56"/>
+          <text x="120" y="139" text-anchor="middle" font-size="10">24V 电池（下槽）</text>
+          <text x="120" y="176" text-anchor="middle" font-size="10">无刷去鳞机 + 电动鱼刀</text>
+          <text x="120" y="190" text-anchor="middle" fill="#868e96" font-size="9">离网 ≥2 小时</text>
+        </g>
+
+        <!-- Upgrade kit card -->
+        <g transform="translate(303, 196)">
+          <rect width="74" height="62" rx="8" fill="#FFF4E0" stroke="#EF9F27" stroke-width="1.5"/>
+          <text x="37" y="18" text-anchor="middle" fill="#854F0B" font-size="10" font-weight="700">Pro</text>
+          <text x="37" y="31" text-anchor="middle" fill="#854F0B" font-size="10" font-weight="700">Upgrade</text>
+          <text x="37" y="47" text-anchor="middle" fill="#854F0B" font-size="12" font-weight="800">$499</text>
+          <text x="37" y="59" text-anchor="middle" fill="#868e96" font-size="8">4 模块</text>
+        </g>
+        <defs>
+          <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L6,3 L0,6 Z" fill="#EF9F27"/>
+          </marker>
+        </defs>
+        <line x1="300" y1="227" x2="382" y2="227" stroke="#EF9F27" stroke-width="3" marker-end="url(#arrow)"/>
+
+        <!-- Interface labels -->
+        <g transform="translate(40, 365)">
+          <rect width="600" height="80" rx="8" fill="#f8f9fa" stroke="#dee2e6" stroke-width="0.5"/>
+          <text x="20" y="22" fill="#212529" font-size="13" font-weight="500">Plug-and-Play Interfaces</text>
+
+          <rect x="20" y="35" width="175" height="35" rx="6" fill="#fff" stroke="#dee2e6" stroke-width="0.5"/>
+          <text x="107" y="50" text-anchor="middle" fill="#212529" font-size="11" font-weight="600">Center Bay: Pogo Pin</text>
+          <text x="107" y="63" text-anchor="middle" fill="#868e96" font-size="10">Hot-swap blind mate</text>
+
+          <rect x="210" y="35" width="175" height="35" rx="6" fill="#fff" stroke="#dee2e6" stroke-width="0.5"/>
+          <text x="297" y="50" text-anchor="middle" fill="#212529" font-size="11" font-weight="600">Scaler: Quick-Lock</text>
+          <text x="297" y="63" text-anchor="middle" fill="#868e96" font-size="10">Multi-petal patent</text>
+
+          <rect x="400" y="35" width="180" height="35" rx="6" fill="#fff" stroke="#dee2e6" stroke-width="0.5"/>
+          <text x="490" y="50" text-anchor="middle" fill="#212529" font-size="11" font-weight="600">Power: Aviation Plug</text>
+          <text x="490" y="63" text-anchor="middle" fill="#868e96" font-size="10">IP67 threaded lock</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Upgrade to Pro ============ -->
+<section class="section upgrade" id="upgrade">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="upgrade_tag">升级到 Pro</span>
+      <h2 class="section-title" data-i18n="upgrade_title">Standard 随你一起成长</h2>
+      <p class="section-subtitle" data-i18n="upgrade_subtitle">加购 4 个模块，你的 Standard 即变 Pro——原有箱体与备用去鳞机全都保留，从不重复花钱。</p>
+    </div>
+    <div class="upgrade-flow">
+      <div class="upgrade-step">
+        <div class="upgrade-img"><img src="assets/img/standard-product.png" alt="Standard"></div>
+        <div class="upgrade-cap" data-i18n="upgrade_from">你已拥有</div>
+        <div class="upgrade-name">Standard · $499</div>
+      </div>
+      <div class="upgrade-arrow">&rarr;</div>
+      <div class="upgrade-kit">
+        <div class="upgrade-kit-img"><img src="assets/img/acc-kit.png" alt="Pro Upgrade Kit"></div>
+        <h3 class="upgrade-kit-title" data-i18n="upgrade_kit_label">Pro 升级套装</h3>
+        <p class="upgrade-kit-modules" data-i18n="upgrade_kit_modules">真空密封 cartridge · 24V 电池 cartridge · 无刷去鳞机 · 电动鱼刀</p>
+        <div class="upgrade-kit-price">$499</div>
+        <button class="btn btn-primary btn-add-cart" data-add-cart="pro_kit" data-i18n="upgrade_add_kit">加购升级套装</button>
+      </div>
+      <div class="upgrade-arrow">&rarr;</div>
+      <div class="upgrade-step">
+        <div class="upgrade-img"><img src="assets/img/pro-product.png" alt="Pro"></div>
+        <div class="upgrade-cap" data-i18n="upgrade_equals">＝ Pro 旗舰</div>
+        <div class="upgrade-name">Pro · $999</div>
+      </div>
+    </div>
+    <p class="upgrade-note" data-i18n="upgrade_note">散买 4 模块 $556，套装立省 $57。直接买 Pro 整机亦同价 $999。</p>
+  </div>
+</section>
+
+<!-- ============ Comparison Table ============ -->
+<section class="section comparison" id="compare">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="compare_tag">参数对比</span>
+      <h2 class="section-title" data-i18n="compare_title">三档产品完整对比</h2>
+      <p class="section-subtitle" data-i18n="compare_subtitle">找到最适合你的那一款。</p>
+    </div>
+    <div class="comparison-table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Mini Lite<br><span style="font-weight:400;color:var(--gray-500)">$149</span></th>
+            <th>Standard<br><span style="font-weight:400;color:var(--gray-500)">$499</span></th>
+            <th>Pro Flagship<br><span style="font-weight:400;color:var(--gray-500)">$999</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>完整箱体 (80×44×26cm)</td><td class="cross">&#8212;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+          <tr><td>HDPE 测量砧板</td><td class="cross">&#8212;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+          <tr><td>循环给水系统</td><td class="cross">&#8212;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+          <tr><td>手持去鳞机</td><td class="check">12V 有刷</td><td class="check">12V 100W</td><td class="check" style="color:var(--teal);font-weight:700">24V 200W 无刷</td></tr>
+          <tr><td>中央功能仓</td><td class="cross">&#8212;</td><td>工具抽屉</td><td class="check" style="color:var(--teal);font-weight:700">真空密封模块</td></tr>
+          <tr><td>动力往复式鱼刀</td><td class="cross">&#8212;</td><td class="cross">&#8212;</td><td class="check">&#10003;</td></tr>
+          <tr><td>内置锂电池</td><td class="check">12V 2200mAh</td><td class="cross">&#8212;</td><td class="check" style="color:var(--teal);font-weight:700">24V 6S1P 50Wh</td></tr>
+          <tr><td>离网独立工作</td><td class="check">&#10003;</td><td class="cross">&#8212;</td><td class="check">&#10003; (≥2h)</td></tr>
+          <tr><td>供电方式</td><td>内置电池</td><td>12V 点烟器有线</td><td>电池 + 110V/12V 双充</td></tr>
+          <tr><td>IPX6 防水</td><td class="cross">&#8212;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+          <tr><td>316 不锈钢五金</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+          <tr><td>防误触安全设计</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+          <tr><td>收纳包/箱</td><td>1680D 牛津布包</td><td>箱体内置收纳</td><td>箱体内置收纳</td></tr>
+          <tr><td>适配皮卡改装系统</td><td class="cross">&#8212;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Accessories & Consumables ============ -->
+<section class="section accessories" id="accessories">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="acc_tag">配件与耗材</span>
+      <h2 class="section-title" data-i18n="acc_title">零配件 &amp; 消耗品独立购买</h2>
+      <p class="section-subtitle" data-i18n="acc_subtitle">替换刀头、真空袋、电动工具、收纳配件——全部可单独选购，支持全系列兼容。</p>
+    </div>
+    <div class="accessories-grid" id="accessories-grid"></div>
+  </div>
+</section>
+
+<!-- ============ Use Cases ============ -->
+<section class="section use-cases" id="usecases">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="usecase_tag">使用场景</span>
+      <h2 class="section-title" data-i18n="usecase_title">从冰湖到海礁，随时开干</h2>
+      <p class="section-subtitle" data-i18n="usecase_subtitle">无论你在哪里钓鱼，TailFin Marine 都能让 Catch & Cook 变得干净利落。</p>
+    </div>
+    <div class="usecase-grid">
+      <div class="usecase-card">
+        <div class="usecase-image ice">
+          <img src="assets/img/scene-ice.png" alt="Ice fishing on Canadian frozen lake with TailFin Marine Pro">
+        </div>
+        <div class="usecase-body">
+          <h3 class="usecase-title" data-i18n="usecase1_title">冰钓 · 加拿大冰湖</h3>
+          <p class="usecase-desc" data-i18n="usecase1_desc">零下20度冰面上，Pro款电池独立工作，去鳞切割真空密封一气呵成，不用回车上取电。</p>
+          <span class="usecase-tag pro" style="background:var(--teal-bg);color:var(--teal)">Pro 旗舰</span>
+        </div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-image ocean">
+          <img src="assets/img/scene-ocean.png" alt="Sea fishing on Pacific rocky shoreline with TailFin Marine">
+        </div>
+        <div class="usecase-body">
+          <h3 class="usecase-title" data-i18n="usecase2_title">海钓 · 太平洋礁石</h3>
+          <p class="usecase-desc" data-i18n="usecase2_desc">316不锈钢通过72小时盐雾测试，海水腐蚀无惧。高压冲洗直接清理，码头排队洗鱼台再见。</p>
+          <span class="usecase-tag standard" style="background:var(--blue-bg);color:var(--blue)">Standard / Pro</span>
+        </div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-image lake">
+          <img src="assets/img/scene-lake.png" alt="Kayak fishing on mountain lake with Pocket Scaler">
+        </div>
+        <div class="usecase-body">
+          <h3 class="usecase-title" data-i18n="usecase3_title">路亚 · 山地溪流</h3>
+          <p class="usecase-desc" data-i18n="usecase3_desc">Mini款仅手掌大小，塞进背包徒步进山。即捕即处理，保持鱼肉鲜活到营地。</p>
+          <span class="usecase-tag mini" style="background:var(--amber-bg);color:var(--amber)">Mini Lite</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA Banner ============ -->
+<section class="cta-banner" id="contact">
+  <div class="container">
+    <h2 data-i18n="cta_title">准备好升级你的钓鱼体验了吗？</h2>
+    <p data-i18n="cta_subtitle">首批产品限量发售，Bass Pro Shops / Cabela's 线下同步上架。</p>
+    <a href="#products" class="btn btn-primary btn-lg" data-i18n="cta_btn">立即选购</a>
+  </div>
+</section>
+
+<!-- ============ Footer ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="7" fill="#0F6E56"/><path d="M8 20 L16 8 L24 20 L20 20 L16 14 L12 20 Z" fill="white"/><circle cx="16" cy="24" r="2" fill="#EF9F27"/></svg>
+          TailFin Marine
+        </h3>
+        <p data-i18n="footer_desc">TailFin Marine 致力于让每位北美钓客，在车斗里就能体面、干净地处理好每一次鱼获。</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h10M7 16h6M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h10M7 16h6M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_products">产品</h4>
+        <ul>
+          <li><a href="#products">Mini Lite — $149</a></li>
+          <li><a href="#products">Standard — $499</a></li>
+          <li><a href="#products">Pro Flagship — $999</a></li>
+          <li><a href="#products" data-i18n="footer_shipping">配件 &amp; 耗材</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_company">公司</h4>
+        <ul>
+          <li><a href="#" data-i18n="footer_about">关于我们</a></li>
+          <li><a href="#" data-i18n="footer_careers">招贤纳士</a></li>
+          <li><a href="#" data-i18n="footer_contact">联系方式</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_support">支持</h4>
+        <ul>
+          <li><a href="#" data-i18n="footer_warranty">保修政策</a></li>
+          <li><a href="#" data-i18n="footer_returns">退换货</a></li>
+          <li><a href="#" data-i18n="footer_faq">常见问题</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 TailFin Marine. <span data-i18n="footer_rights">保留所有权利。</span></p>
+      <p>Designed in USA · Manufactured with precision · <a href="admin.html" style="color:var(--teal);text-decoration:none;">商家管理后台 ↗</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/store.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

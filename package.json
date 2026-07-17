@@ -1,0 +1,13 @@
+{
+  "name": "tailfin-marine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TailFin Marine — truck tailgate mobile fish processing workstation e-commerce site (Vercel-ready)",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "@vercel/kv": "^1.0.1"
+  }
+}

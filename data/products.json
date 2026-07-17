@@ -1,0 +1,439 @@
+{
+  "updatedAt": "2026-07-17T21:21:09.028Z",
+  "currency": "USD",
+  "products": [
+    {
+      "id": "mini",
+      "type": "main",
+      "category": "workstation",
+      "tier": "mini",
+      "name": {
+        "zh": "The Pocket Scaler (Mini)",
+        "en": "The Pocket Scaler (Mini)"
+      },
+      "desc": {
+        "zh": "极简款 · 徒步/皮划艇轻量钓客",
+        "en": "Lite · Hiking & Kayak anglers"
+      },
+      "price": 149,
+      "compareAtPrice": null,
+      "active": true,
+      "image": "assets/img/mini-product.png",
+      "promotion": {
+        "enabled": true,
+        "type": "percent",
+        "value": 10,
+        "label": {
+          "zh": "首发 9 折",
+          "en": "Launch 10% OFF"
+        }
+      }
+    },
+    {
+      "id": "standard",
+      "type": "main",
+      "category": "workstation",
+      "tier": "standard",
+      "name": {
+        "zh": "Tailgate Workstation (Standard)",
+        "en": "Tailgate Workstation (Standard)"
+      },
+      "desc": {
+        "zh": "基础款 · 皮卡车主 · 可升级到 Pro",
+        "en": "Standard · Truck owners · Upgradeable to Pro"
+      },
+      "price": 499,
+      "compareAtPrice": null,
+      "active": true,
+      "image": "assets/img/standard-product.png",
+      "promotion": {
+        "enabled": false,
+        "type": "none",
+        "value": 0,
+        "label": {
+          "zh": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "pro",
+      "type": "main",
+      "category": "workstation",
+      "tier": "pro",
+      "name": {
+        "zh": "Mobile Fish Factory (Pro)",
+        "en": "Mobile Fish Factory (Pro)"
+      },
+      "desc": {
+        "zh": "旗舰款 · 移动加工厂",
+        "en": "Pro · Mobile Fish Factory"
+      },
+      "price": 999,
+      "compareAtPrice": null,
+      "active": true,
+      "image": "assets/img/pro-product.png",
+      "promotion": {
+        "enabled": false,
+        "type": "none",
+        "value": 0,
+        "label": {
+          "zh": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "pro_kit",
+      "type": "bundle",
+      "category": "upgrade",
+      "tier": "pro",
+      "name": {
+        "zh": "Pro 升级套装",
+        "en": "Pro Upgrade Kit"
+      },
+      "desc": {
+        "zh": "真空 cartridge + 24V 电池 + 无刷去鳞机 + 电动鱼刀",
+        "en": "Vacuum cartridge + 24V battery + brushless scaler + fillet knife"
+      },
+      "price": 499,
+      "compareAtPrice": 556,
+      "active": true,
+      "bundle": true,
+      "image": "assets/img/acc-kit.png",
+      "promotion": {
+        "enabled": true,
+        "type": "fixed",
+        "value": 50,
+        "label": {
+          "zh": "套装立减 $50",
+          "en": "Bundle $50 OFF"
+        }
+      }
+    },
+    {
+      "id": "scaler_blade",
+      "type": "accessory",
+      "category": "consumable",
+      "tier": "mini",
+      "name": {
+        "zh": "316不锈钢去鳞刀头 (替换装)",
+        "en": "316 SS Scaler Blade (Replacement)"
+      },
+      "desc": {
+        "zh": "多瓣快装卡扣接口，通用替换",
+        "en": "Multi-petal quick-lock interface, universal fit"
+      },
+      "price": 29,
+      "compareAtPrice": null,
+      "active": true,
+      "image": "assets/img/acc-blade.png",
+      "promotion": {
+        "enabled": false,
+        "type": "none",
+        "value": 0,
+        "label": {
+          "zh": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "vacuum_bags",
+      "type": "accessory",
+      "category": "consumable",
+      "tier": "pro",
+      "name": {
+        "zh": "防穿刺真空密封袋 (20片)",
+        "en": "Puncture-Proof Vacuum Bags (20pk)"
+      },
+      "desc": {
+        "zh": "防鱼刺穿刺，锁住新鲜不漏血水",
+        "en": "Puncture-proof, locks in freshness, no leaks"
+      },
+      "price": 19,
+      "compareAtPrice": null,
+      "active": true,
+      "image": "assets/img/acc-bags.png",
+      "promotion": {
+        "enabled": true,
+        "type": "percent",
+        "value": 15,
+        "label": {
+          "zh": "耗材 85 折",
+          "en": "Consumables 15% OFF"
+        }
+      }
+    },
+    {
+      "id": "hose_replacement",
+      "type": "accessory",
+      "category": "spare",
+      "tier": "standard",
+      "name": {
+        "zh": "PU进水管替换 (3米)",
+        "en": "PU Intake Hose Replacement (3m)"
+      },
+      "desc": {
+        "zh": "防踩踏软管 + 重力不锈钢滤网",
+        "en": "Crush-proof PU hose + gravity SS mesh filter"
+      },
+      "price": 25,
+      "compareAtPrice": null,
+      "active": true,
+      "image": "assets/img/acc-hose.png",
+      "promotion": {
+        "enabled": false,
+        "type": "none",
+        "value": 0,
+        "label": {
+          "zh": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "electric_knife",
+      "type": "accessory",
+      "category": "module",
+      "tier": "pro",
+      "name": {
+        "zh": "12V 动力往复式电动鱼刀",
+        "en": "12V Electric Fillet Knife"
+      },
+      "desc": {
+        "zh": "往复式锯齿刀片，防水航空插口",
+        "en": "Reciprocating blade, waterproof aviation plug"
+      },
+      "price": 79,
+      "compareAtPrice": null,
+      "active": true,
+      "image": "assets/img/acc-knife.png",
+      "promotion": {
+        "enabled": false,
+        "type": "none",
+        "value": 0,
+        "label": {
+          "zh": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "scissors",
+      "type": "accessory",
+      "category": "tool",
+      "tier": "mini",
+      "name": {
+        "zh": "多功能不锈钢鱼剪刀",
+        "en": "SS Multi-Function Fish Shears"
+      },
+      "desc": {
+        "zh": "开肚、剪鳍、剪骨三合一",
+        "en": "Gutting, finning, bone-cutting 3-in-1"
+      },
+      "price": 15,
+      "compareAtPrice": null,
+      "active": true,
+      "image": "assets/img/acc-scissors.png",
+      "promotion": {
+        "enabled": false,
+        "type": "none",
+        "value": 0,
+        "label": {
+          "zh": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "descaler_std",
+      "type": "accessory",
+      "category": "module",
+      "tier": "standard",
+      "name": {
+        "zh": "12V 有刷防水去鳞机 (单机)",
+        "en": "12V Brushed Waterproof Scaler"
+      },
+      "desc": {
+        "zh": "100W功率，316SS滚齿刀头",
+        "en": "100W, 316 SS roller blade head"
+      },
+      "price": 89,
+      "compareAtPrice": null,
+      "active": true,
+      "image": "assets/img/acc-scaler.png",
+      "promotion": {
+        "enabled": false,
+        "type": "none",
+        "value": 0,
+        "label": {
+          "zh": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "descaler_pro",
+      "type": "accessory",
+      "category": "module",
+      "tier": "pro",
+      "name": {
+        "zh": "24V 无刷高扭矩去鳞机 (单机)",
+        "en": "24V Brushless High-Torque Scaler"
+      },
+      "desc": {
+        "zh": "200W无刷电机，PC防飞溅罩",
+        "en": "200W brushless motor, PC splash guard"
+      },
+      "price": 129,
+      "compareAtPrice": null,
+      "active": true,
+      "image": "assets/img/acc-scaler.png",
+      "promotion": {
+        "enabled": false,
+        "type": "none",
+        "value": 0,
+        "label": {
+          "zh": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "battery_pack",
+      "type": "accessory",
+      "category": "module",
+      "tier": "pro",
+      "name": {
+        "zh": "24V 锂电池包 (替换)",
+        "en": "24V Li-ion Battery Pack (Repl.)"
+      },
+      "desc": {
+        "zh": "6S1P 约50Wh，BMS双充保护",
+        "en": "6S1P ~50Wh, BMS dual-charge protection"
+      },
+      "price": 149,
+      "compareAtPrice": null,
+      "active": true,
+      "image": "assets/img/acc-battery.png",
+      "promotion": {
+        "enabled": false,
+        "type": "none",
+        "value": 0,
+        "label": {
+          "zh": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "vacuum_cartridge",
+      "type": "accessory",
+      "category": "module",
+      "tier": "pro",
+      "name": {
+        "zh": "真空密封 cartridge 模组",
+        "en": "Vacuum Sealer Cartridge"
+      },
+      "desc": {
+        "zh": "干湿两用 ≥-75kPa，含液体收集盒，Pogo Pin 接入中央仓",
+        "en": "Wet/dry ≥-75kPa, liquid trap, Pogo Pin bay mount"
+      },
+      "price": 199,
+      "compareAtPrice": null,
+      "active": true,
+      "image": "assets/img/acc-vacuum.png",
+      "promotion": {
+        "enabled": false,
+        "type": "none",
+        "value": 0,
+        "label": {
+          "zh": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "hdpe_board",
+      "type": "accessory",
+      "category": "spare",
+      "tier": "standard",
+      "name": {
+        "zh": "HDPE 食品级测量砧板 (替换)",
+        "en": "HDPE Cutting Board w/Ruler (Repl.)"
+      },
+      "desc": {
+        "zh": "≥1.5cm厚，激光导流槽+双排量尺",
+        "en": "≥1.5cm thick, laser drainage + dual ruler"
+      },
+      "price": 35,
+      "compareAtPrice": null,
+      "active": true,
+      "image": "assets/img/acc-board.png",
+      "promotion": {
+        "enabled": false,
+        "type": "none",
+        "value": 0,
+        "label": {
+          "zh": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "oxford_pouch",
+      "type": "accessory",
+      "category": "tool",
+      "tier": "mini",
+      "name": {
+        "zh": "1680D 牛津布收纳包",
+        "en": "1680D Oxford Waterproof Pouch"
+      },
+      "desc": {
+        "zh": "双股加厚，防泼水洗漱包大小",
+        "en": "Double-ply, waterproof, toiletry-bag size"
+      },
+      "price": 25,
+      "compareAtPrice": null,
+      "active": true,
+      "image": "assets/img/acc-pouch.png",
+      "promotion": {
+        "enabled": false,
+        "type": "none",
+        "value": 0,
+        "label": {
+          "zh": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "water_bag",
+      "type": "accessory",
+      "category": "tool",
+      "tier": "mini",
+      "name": {
+        "zh": "10L 折叠 PVC 提水袋",
+        "en": "10L Collapsible PVC Water Bag"
+      },
+      "desc": {
+        "zh": "吹塑成型，轻量便携",
+        "en": "Blow-molded, lightweight portable"
+      },
+      "price": 18,
+      "compareAtPrice": null,
+      "active": true,
+      "image": "assets/img/acc-waterbag.png",
+      "promotion": {
+        "enabled": false,
+        "type": "none",
+        "value": 0,
+        "label": {
+          "zh": "",
+          "en": ""
+        }
+      }
+    }
+  ]
+}

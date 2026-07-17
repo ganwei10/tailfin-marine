@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>结算 | TailFin Marine</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230F6E56'/><text x='16' y='22' text-anchor='middle' fill='white' font-size='18' font-weight='bold'>T</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="7" fill="#0F6E56"/><path d="M8 20 L16 8 L24 20 L20 20 L16 14 L12 20 Z" fill="white"/><circle cx="16" cy="24" r="2" fill="#EF9F27"/></svg>
+      <span>TailFin Marine</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#products" data-i18n="nav_products">产品</a>
+      <a href="index.html#features" data-i18n="nav_features">特性</a>
+      <a href="index.html#specs" data-i18n="nav_specs">规格</a>
+      <a href="index.html#modular" data-i18n="nav_modular">模块化</a>
+      <a href="index.html#usecases" data-i18n="nav_usecases">场景</a>
+    </div>
+    <div class="nav-actions">
+      <button class="lang-toggle" data-lang="zh" onclick="applyLanguage('zh')">中文</button>
+      <button class="lang-toggle" data-lang="en" onclick="applyLanguage('en')">EN</button>
+      <a href="cart.html" class="cart-btn">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        <span data-i18n="nav_cart">购物车</span>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Checkout Page -->
+<div class="cart-page">
+  <div class="container">
+    <div class="page-header">
+      <h1 data-i18n="checkout_title">结算</h1>
+      <p style="color:var(--gray-600)" data-i18n="checkout_shipping">配送信息</p>
+    </div>
+
+    <form class="checkout-form" onsubmit="placeOrder(event)">
+      <div>
+        <!-- Shipping Info -->
+        <div class="form-section">
+          <h3 data-i18n="checkout_shipping">配送信息</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label data-i18n="form_firstname">名</label>
+              <input type="text" required placeholder="John">
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_lastname">姓</label>
+              <input type="text" required placeholder="Doe">
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_email">邮箱</label>
+              <input type="email" required placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_phone">电话</label>
+              <input type="tel" required placeholder="+1 (555) 000-0000">
+            </div>
+            <div class="form-group full">
+              <label data-i18n="form_address">地址</label>
+              <input type="text" required placeholder="123 Main Street">
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_city">城市</label>
+              <input type="text" required placeholder="Seattle">
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_state">州/省</label>
+              <input type="text" required placeholder="WA">
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_zip">邮编</label>
+              <input type="text" required placeholder="98101">
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_country">国家</label>
+              <select required>
+                <option value="US">United States</option>
+                <option value="CA">Canada</option>
+                <option value="CN">China / 中国</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Method -->
+        <div class="form-section">
+          <h3 data-i18n="checkout_payment">支付方式</h3>
+          <div class="payment-methods">
+            <div class="payment-method active" data-method="card">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+              <p data-i18n="pay_card">信用卡</p>
+            </div>
+            <div class="payment-method" data-method="paypal">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <p>PayPal</p>
+            </div>
+            <div class="payment-method" data-method="apple">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M12 14h.01M12 10h.01M12 6h.01M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
+              <p>Apple Pay</p>
+            </div>
+          </div>
+
+          <!-- Card details -->
+          <div class="form-grid" style="margin-top: 1.5rem;">
+            <div class="form-group full">
+              <label>Card Number</label>
+              <input type="text" placeholder="0000 0000 0000 0000" maxlength="19">
+            </div>
+            <div class="form-group">
+              <label>Expiry Date</label>
+              <input type="text" placeholder="MM/YY" maxlength="5">
+            </div>
+            <div class="form-group">
+              <label>CVV</label>
+              <input type="text" placeholder="000" maxlength="4">
+            </div>
+            <div class="form-group full">
+              <label>Name on Card</label>
+              <input type="text" placeholder="JOHN DOE">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Order Summary -->
+      <div>
+        <div class="cart-summary" id="checkout-summary">
+          <!-- Summary rendered by cart.js -->
+        </div>
+        <button type="submit" class="place-order-btn" data-i18n="place_order">提交订单</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <p>&copy; 2026 TailFin Marine. <span data-i18n="footer_rights">保留所有权利。</span></p>
+      <p>Designed in USA · Manufactured with precision</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/store.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

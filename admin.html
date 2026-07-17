@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TailFin Marine · 电商管理后台</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: #f4f6f8; color: #1a2b3c; }
+    header { background: #0a2342; color: #fff; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    header h1 { font-size: 1.15rem; font-weight: 700; }
+    header .links a { color: #9fd3c7; text-decoration: none; margin-left: 1rem; font-size: .875rem; }
+    .wrap { max-width: 1200px; margin: 1.5rem auto; padding: 0 1.5rem; }
+    .toolbar { display: flex; gap: .75rem; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; }
+    .toolbar button, .toolbar input { font-size: .875rem; }
+    .btn { background: #0F6E56; color: #fff; border: none; padding: .55rem 1rem; border-radius: 6px; cursor: pointer; font-weight: 600; }
+    .btn:hover { opacity: .92; }
+    .btn-sm { padding: .35rem .6rem; font-size: .8rem; }
+    .btn-ghost { background: #e9eef3; color: #1a2b3c; }
+    .btn-danger { background: #c0392b; }
+    .stats { display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .stat { background: #fff; border-radius: 10px; padding: .9rem 1.2rem; box-shadow: 0 1px 3px rgba(0,0,0,.06); flex: 1; min-width: 160px; }
+    .stat .n { font-size: 1.6rem; font-weight: 700; color: #0a2342; }
+    .stat .l { font-size: .8rem; color: #6b7a8d; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    th, td { padding: .6rem .7rem; text-align: left; border-bottom: 1px solid #eef1f4; font-size: .85rem; vertical-align: middle; }
+    th { background: #f0f3f6; color: #44566c; font-weight: 600; }
+    tr.off { opacity: .5; }
+    .thumb { width: 54px; height: 54px; object-fit: cover; border-radius: 6px; border: 1px solid #e3e8ee; }
+    .pid { font-family: monospace; color: #6b7a8d; font-size: .78rem; }
+    input.price { width: 76px; padding: .3rem .4rem; border: 1px solid #cdd6df; border-radius: 5px; }
+    select { padding: .3rem .35rem; border: 1px solid #cdd6df; border-radius: 5px; }
+    .switch { position: relative; display: inline-block; width: 42px; height: 22px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider { position: absolute; cursor: pointer; inset: 0; background: #cbd5e0; transition: .2s; border-radius: 22px; }
+    .slider:before { content: ""; position: absolute; height: 16px; width: 16px; left: 3px; bottom: 3px; background: #fff; transition: .2s; border-radius: 50%; }
+    .switch input:checked + .slider { background: #0F6E56; }
+    .switch input:checked + .slider:before { transform: translateX(20px); }
+    .badge { display: inline-block; font-size: .7rem; padding: .15rem .5rem; border-radius: 20px; background: #ffe9c7; color: #8a5a00; margin-top: 4px; }
+    .promo-row { display: flex; gap: .35rem; flex-wrap: wrap; align-items: center; }
+    .promo-row input[type=text] { width: 110px; padding: .3rem .4rem; border: 1px solid #cdd6df; border-radius: 5px; }
+    .toast { position: fixed; bottom: 1.5rem; right: 1.5rem; background: #0a2342; color: #fff; padding: .7rem 1.1rem; border-radius: 8px; opacity: 0; transform: translateY(10px); transition: .25s; pointer-events: none; font-size: .85rem; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    dialog { border: none; border-radius: 12px; padding: 1.5rem; max-width: 440px; width: 92%; box-shadow: 0 10px 40px rgba(0,0,0,.2); }
+    dialog::backdrop { background: rgba(0,0,0,.35); }
+    .field { margin-bottom: .8rem; }
+    .field label { display: block; font-size: .8rem; color: #44566c; margin-bottom: .25rem; }
+    .field input, .field select { width: 100%; padding: .45rem .55rem; border: 1px solid #cdd6df; border-radius: 6px; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🐟 TailFin Marine · 电商管理后台</h1>
+    <div class="links">
+      <a href="index.html" target="_blank">查看官网 ↗</a>
+      <a href="#" id="logout">退出</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="stats" id="stats"></div>
+
+    <div class="toolbar">
+      <button class="btn" id="addBtn">+ 新增产品</button>
+      <button class="btn btn-ghost" id="refreshBtn">刷新</button>
+      <span style="font-size:.8rem;color:#6b7a8d;">提示：上架/下架、价格、促销实时生效；下架商品在官网不再展示。</span>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>图片</th><th>ID / 名称</th><th>类型</th><th>售价 ($)</th>
+          <th>促销</th><th>状态(上架)</th><th>操作</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <dialog id="addDialog">
+    <h3 style="margin-bottom:1rem;">新增产品</h3>
+    <div class="field"><label>ID (英文, 唯一)</label><input id="n_id" placeholder="e.g. new_item"></div>
+    <div class="field"><label>名称 (中文)</label><input id="n_zh" placeholder="中文名"></div>
+    <div class="field"><label>名称 (English)</label><input id="n_en" placeholder="English name"></div>
+    <div class="field"><label>类型</label>
+      <select id="n_type"><option value="accessory">配件 accessory</option><option value="main">整机 main</option><option value="bundle">套装 bundle</option></select>
+    </div>
+    <div class="field"><label>售价 ($)</label><input id="n_price" type="number" value="0"></div>
+    <div class="field"><label>图片路径</label><input id="n_img" placeholder="assets/img/xxx.png"></div>
+    <div style="display:flex;gap:.5rem;justify-content:flex-end;margin-top:1rem;">
+      <button class="btn btn-ghost" id="addCancel">取消</button>
+      <button class="btn" id="addConfirm">创建</button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const TOKEN = 'tailfin-admin';
+    const headers = { 'Content-Type': 'application/json', 'x-admin-token': TOKEN };
+    const $ = s => document.querySelector(s);
+
+    function toast(msg) {
+      const t = $('#toast'); t.textContent = msg; t.classList.add('show');
+      clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2200);
+    }
+    function esc(s) { return (s || '').toString().replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+    async function load() {
+      const r = await fetch('/api/products');
+      const data = await r.json();
+      const list = data.products;
+      render(list);
+      renderStats(list);
+    }
+
+    function renderStats(list) {
+      const active = list.filter(p => p.active).length;
+      const promo = list.filter(p => p.promotion && p.promotion.enabled).length;
+      const total = list.reduce((s,p)=>s+p.price,0);
+      $('#stats').innerHTML = `
+        <div class="stat"><div class="n">${list.length}</div><div class="l">产品总数</div></div>
+        <div class="stat"><div class="n">${active}</div><div class="l">已上架</div></div>
+        <div class="stat"><div class="n">${list.length-active}</div><div class="l">已下架</div></div>
+        <div class="stat"><div class="n">${promo}</div><div class="l">促销中</div></div>`;
+    }
+
+    function render(list) {
+      const rows = $('#rows');
+      rows.innerHTML = list.map(p => {
+        const pr = p.promotion || {};
+        const badge = pr.enabled ? `<span class="badge">${esc(pr.label && (pr.label.zh||pr.label.en) || '促销')}</span>` : '';
+        return `<tr class="${p.active ? '' : 'off'}" data-id="${esc(p.id)}">
+          <td><img class="thumb" src="${esc(p.image)}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22/>'"></td>
+          <td><div class="pid">${esc(p.id)}</div><div>${esc(p.name && (p.name.zh||p.name.en))}</div>${badge}</td>
+          <td><select data-f="type">
+                <option value="main" ${p.type==='main'?'selected':''}>整机</option>
+                <option value="accessory" ${p.type==='accessory'?'selected':''}>配件</option>
+                <option value="bundle" ${p.type==='bundle'?'selected':''}>套装</option>
+              </select></td>
+          <td><div class="promo-row">
+                <input class="price" type="number" data-f="price" value="${p.price}">
+                ${p.compareAtPrice ? `<span style="color:#999;font-size:.75rem;">原价$${p.compareAtPrice}</span>`:''}
+              </div></td>
+          <td><div class="promo-row">
+                <select data-f="ptype">
+                  <option value="none" ${pr.type==='none'?'selected':''}>无</option>
+                  <option value="percent" ${pr.type==='percent'?'selected':''}>折扣%</option>
+                  <option value="fixed" ${pr.type==='fixed'?'selected':''}>立减$</option>
+                </select>
+                <input class="price" type="number" data-f="pvalue" value="${pr.value||0}" placeholder="值">
+                <input type="text" data-f="plabel" value="${esc(pr.label && (pr.label.zh||''))}" placeholder="标签(中)">
+              </div></td>
+          <td><label class="switch"><input type="checkbox" data-f="active" ${p.active?'checked':''}><span class="slider"></span></label></td>
+          <td>
+            <button class="btn btn-sm" data-act="save">保存</button>
+            <button class="btn btn-sm btn-danger" data-act="del">删除</button>
+          </td>
+        </tr>`;
+      }).join('');
+
+      rows.querySelectorAll('tr').forEach(tr => {
+        const id = tr.dataset.id;
+        tr.querySelector('[data-act="save"]').onclick = () => saveRow(id, tr);
+        tr.querySelector('[data-act="del"]').onclick = () => delRow(id);
+      });
+    }
+
+    async function saveRow(id, tr) {
+      const get = f => tr.querySelector(`[data-f="${f}"]`).value;
+      const type = get('type');
+      const price = Number(get('price'));
+      const active = tr.querySelector('[data-f="active"]').checked;
+      const ptype = get('ptype');
+      const pvalue = Number(get('pvalue')) || 0;
+      const plabel = get('plabel');
+      const promo = {
+        enabled: ptype !== 'none',
+        type: ptype,
+        value: pvalue,
+        label: { zh: plabel, en: plabel }
+      };
+      const r = await fetch('/api/products/' + id, {
+        method: 'PUT', headers,
+        body: JSON.stringify({ type, price, active, promotion: promo })
+      });
+      if (r.ok) { toast('已保存: ' + id); load(); }
+      else toast('保存失败');
+    }
+
+    async function delRow(id) {
+      if (!confirm('确认删除 ' + id + '？')) return;
+      const r = await fetch('/api/products/' + id, { method: 'DELETE', headers });
+      if (r.ok) { toast('已删除: ' + id); load(); } else toast('删除失败');
+    }
+
+    // Add dialog
+    $('#addBtn').onclick = () => $('#addDialog').showModal();
+    $('#addCancel').onclick = () => $('#addDialog').close();
+    $('#refreshBtn').onclick = load;
+    $('#logout').onclick = (e) => { e.preventDefault(); toast('演示后台，无需登录'); };
+
+    $('#addConfirm').onclick = async () => {
+      const id = $('#n_id').value.trim();
+      const zh = $('#n_zh').value.trim();
+      const en = $('#n_en').value.trim();
+      const price = Number($('#n_price').value);
+      if (!id || !en || !price) { toast('请填写 ID / 英文名 / 售价'); return; }
+      const body = {
+        id, type: $('#n_type').value, price,
+        name: { zh: zh || en, en },
+        desc: { zh: '', en: '' },
+        image: $('#n_img').value.trim(),
+        active: true
+      };
+      const r = await fetch('/api/products', { method: 'POST', headers, body: JSON.stringify(body) });
+      if (r.ok) { toast('已创建: ' + id); $('#addDialog').close(); load(); }
+      else { const e = await r.json(); toast('创建失败: ' + (e.error||r.status)); }
+    };
+
+    load();
+  </script>
+</body>
+</html>

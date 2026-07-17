@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Vercel build output
+.vercel/
+
+# Local archives / build artifacts
+*.zip
+
+# OS files
+.DS_Store
+
+# WorkBuddy workspace memory (not part of the product)
+.workbuddy/
+
+# Local env overrides (keep secrets out of git)
+.env
+.env.local
