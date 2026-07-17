@@ -4,6 +4,12 @@
 
 站点零依赖：前端为静态 HTML/CSS/JS，后端为 Vercel Serverless Functions（本地用 `node server.js` 等价运行）。
 
+## GitHub 仓库 & 自动推送
+
+- 仓库地址：https://github.com/ganwei10/tailfin-marine （公开，可直接克隆 / Vercel 导入）
+- 分支：`main`。每次站点更新都会自动提交并推送到该仓库（连接器鉴权，无需手动输入 token）。
+- 手动同步：`scripts/push.sh "你的提交说明"` —— 仅在确有改动时提交，随后 `git push`。
+
 ## 目录结构
 
 ```
@@ -38,7 +44,7 @@ node server.js          # 默认 http://localhost:8090
 ## 部署到 Vercel
 
 **方式一：连接 GitHub（推荐，自动部署 + 预览）**
-1. 在 Vercel 控制台「Add New → Project」，导入本仓库。
+1. 在 Vercel 控制台「Add New → Project」，导入仓库 `ganwei10/tailfin-marine`。
 2. Framework Preset 选 **Other**（已由 `vercel.json` 指定），无需构建命令。
 3. 点击 Deploy。每次 `git push` 自动重新部署，PR 自动生成预览环境。
 
