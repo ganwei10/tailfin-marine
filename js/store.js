@@ -96,20 +96,38 @@ function renderProducts() {
   }).join('');
 }
 
+function starsHTML(rating) {
+  const r = Number(rating) || 0;
+  const full = Math.floor(r);
+  const half = (r - full) >= 0.5;
+  let s = '';
+  for (let i = 1; i <= 5; i++) {
+    if (i <= full) s += '<span class="star full">&#9733;</span>';
+    else if (i === full + 1 && half) s += '<span class="star half">&#9733;</span>';
+    else s += '<span class="star">&#9733;</span>';
+  }
+  return `<span class="stars" aria-label="${r} out of 5">${s}</span>`;
+}
+
 function renderAccessories() {
   const grid = document.getElementById('accessories-grid');
   if (!grid) return;
   const L = lang();
+  const addLabel = (i18n && i18n['btn_add_cart'] && i18n['btn_add_cart'][L]) ? i18n['btn_add_cart'][L] : 'Add to Cart';
   const list = Object.values(CATALOG).filter(p => p.type === 'accessory');
   if (list.length === 0) { grid.innerHTML = ''; return; }
   grid.innerHTML = list.map(p => `
     <div class="accessory-card" data-open-product="${p.id}">
-      <div class="accessory-card-img"><img src="${p.image}" alt="${p.name[L] || p.name.en}"></div>
+      <div class="accessory-card-img"><img src="${p.image}" alt="${p.name[L] || p.name.en}" loading="lazy"></div>
       <div class="accessory-card-body">
         <h4 class="accessory-card-name">${p.name[L] || p.name.en}</h4>
-        <p class="accessory-card-desc">${p.desc[L] || p.desc.en || ''}</p>
+        <div class="accessory-card-rating">
+          ${starsHTML(p.rating)}
+          <span class="rating-count">${p.reviews != null ? p.reviews : ''}</span>
+        </div>
         <div class="accessory-card-price">$${p.displayPrice}${promoBadgeHTML(p)}</div>
-        <button class="btn btn-add-cart" data-add-cart="${p.id}">${i18n && i18n['btn_add_cart'] ? i18n['btn_add_cart'][L] : 'Add to Cart'}</button>
+        <p class="accessory-card-desc">${p.desc[L] || p.desc.en || ''}</p>
+        <button class="btn btn-add-cart" data-add-cart="${p.id}">${addLabel}</button>
       </div>
     </div>`).join('');
 }

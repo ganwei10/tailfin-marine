@@ -187,6 +187,19 @@ function esc(s) {
   return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
 
+function starsHTML(rating) {
+  const r = Number(rating) || 0;
+  const full = Math.floor(r);
+  const half = (r - full) >= 0.5;
+  let s = '';
+  for (let i = 1; i <= 5; i++) {
+    if (i <= full) s += '<span class="star full">&#9733;</span>';
+    else if (i === full + 1 && half) s += '<span class="star half">&#9733;</span>';
+    else s += '<span class="star">&#9733;</span>';
+  }
+  return `<span class="stars">${s}</span>`;
+}
+
 let CURRENT_PRODUCT = null;
 
 function renderDetail(p) {
@@ -218,6 +231,8 @@ function renderDetail(p) {
   const relLabel = L === 'zh' ? '看了又看' : 'Customers also bought';
   const qtyLabel = L === 'zh' ? '数量' : 'Qty';
   const notFound = L === 'zh' ? '未找到该商品' : 'Product not found';
+  const ratingLabel = L === 'zh' ? '条评价' : 'ratings';
+  const reviewsText = (p.reviews != null ? p.reviews : 0) + ' ' + ratingLabel;
 
   const root = document.getElementById('pd-root');
   if (!root) return;
@@ -237,6 +252,7 @@ function renderDetail(p) {
       <div class="pd-buybox">
         <div class="pd-brand">TailFin Marine</div>
         <h1 class="pd-title">${esc(name)}</h1>
+        <div class="pd-rating">${starsHTML(p.rating)}<span class="pd-rating-count">${reviewsText}</span></div>
         <div class="pd-shipfrom">${esc(shipFrom)}</div>
 
         <div class="pd-price-block">

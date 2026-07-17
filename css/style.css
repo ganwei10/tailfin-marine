@@ -1136,7 +1136,7 @@ ul, ol {
 .accessory-card {
   background: var(--white);
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   overflow: hidden;
   transition: all var(--transition);
   display: flex;
@@ -1144,21 +1144,27 @@ ul, ol {
 }
 
 .accessory-card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 6px 20px rgba(15, 30, 55, 0.14);
   transform: translateY(-3px);
-  border-color: var(--teal);
+  border-color: var(--gray-300);
 }
 
 .accessory-card-img {
-  height: 180px;
+  height: 190px;
   overflow: hidden;
-  background: var(--gray-50);
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
 
 .accessory-card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   transition: transform var(--transition);
 }
 
@@ -1167,37 +1173,87 @@ ul, ol {
 }
 
 .accessory-card-body {
-  padding: var(--space-sm) var(--space-md);
+  padding: 12px 14px 16px;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .accessory-card-name {
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: var(--navy);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #007185;
   margin-bottom: 4px;
-  line-height: 1.35;
+  line-height: 1.4;
+  cursor: pointer;
 }
 
-.accessory-card-desc {
-  font-size: 0.8125rem;
-  color: var(--gray-600);
-  margin-bottom: var(--space-sm);
-  flex: 1;
+.accessory-card-name:hover {
+  color: #c7511f;
+  text-decoration: underline;
+}
+
+.accessory-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  font-size: 0.75rem;
+}
+
+.accessory-card-rating .stars {
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.accessory-card-rating .star {
+  color: #d5d5d5;
+}
+
+.accessory-card-rating .star.full {
+  color: #de7921;
+}
+
+.accessory-card-rating .rating-count {
+  color: #007185;
+  text-decoration: underline;
 }
 
 .accessory-card-price {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--navy);
-  margin-bottom: var(--space-sm);
+  color: #0f1e37;
+  margin-bottom: 8px;
+}
+
+.accessory-card-desc {
+  font-size: 0.8125rem;
+  color: var(--gray-600);
+  margin-bottom: 12px;
+  flex: 1;
+  line-height: 1.4;
 }
 
 .accessory-card .btn-add-cart {
-  padding: 10px 16px;
+  padding: 9px 16px;
   font-size: 0.8125rem;
+  background: #ffd814;
+  color: #0f1111;
+  border: 1px solid #fcd200;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(213, 217, 217, 0.5);
+}
+
+.accessory-card .btn-add-cart:hover {
+  background: #f7ca00;
+  border-color: #f2c200;
+}
+
+.accessory-card .btn-add-cart.added {
+  background: #e8f5e9;
+  color: #0f6e56;
+  border-color: #b7dfc4;
 }
 
 /* ============ Upgrade to Pro ============ */

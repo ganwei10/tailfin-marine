@@ -68,6 +68,12 @@
 }
 .pd-shipfrom { font-size: 0.8125rem; color: var(--gray-600); margin-bottom: var(--space-sm); }
 
+.pd-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.pd-rating .stars { letter-spacing: 1px; font-size: 1rem; line-height: 1; }
+.pd-rating .star { color: #d5d5d5; }
+.pd-rating .star.full { color: #de7921; }
+.pd-rating-count { font-size: 0.8125rem; color: #007185; text-decoration: underline; }
+
 .pd-price-block {
   display: flex;
   align-items: baseline;

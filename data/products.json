@@ -27,7 +27,9 @@
           "zh": "首发 9 折",
           "en": "Launch 10% OFF"
         }
-      }
+      },
+      "rating": 4.7,
+      "reviews": 312
     },
     {
       "id": "standard",
@@ -54,7 +56,9 @@
           "zh": "",
           "en": ""
         }
-      }
+      },
+      "rating": 4.8,
+      "reviews": 489
     },
     {
       "id": "pro",
@@ -81,7 +85,9 @@
           "zh": "",
           "en": ""
         }
-      }
+      },
+      "rating": 4.9,
+      "reviews": 1024
     },
     {
       "id": "pro_kit",
@@ -109,7 +115,9 @@
           "zh": "套装立减 $50",
           "en": "Bundle $50 OFF"
         }
-      }
+      },
+      "rating": 4.9,
+      "reviews": 256
     },
     {
       "id": "scaler_blade",
@@ -136,7 +144,9 @@
           "zh": "",
           "en": ""
         }
-      }
+      },
+      "rating": 4.8,
+      "reviews": 421
     },
     {
       "id": "vacuum_bags",
@@ -163,7 +173,9 @@
           "zh": "耗材 85 折",
           "en": "Consumables 15% OFF"
         }
-      }
+      },
+      "rating": 4.7,
+      "reviews": 388
     },
     {
       "id": "hose_replacement",
@@ -190,7 +202,9 @@
           "zh": "",
           "en": ""
         }
-      }
+      },
+      "rating": 4.6,
+      "reviews": 174
     },
     {
       "id": "electric_knife",
@@ -217,7 +231,9 @@
           "zh": "",
           "en": ""
         }
-      }
+      },
+      "rating": 4.8,
+      "reviews": 533
     },
     {
       "id": "scissors",
@@ -244,7 +260,9 @@
           "zh": "",
           "en": ""
         }
-      }
+      },
+      "rating": 4.7,
+      "reviews": 295
     },
     {
       "id": "descaler_std",
@@ -271,7 +289,9 @@
           "zh": "",
           "en": ""
         }
-      }
+      },
+      "rating": 4.6,
+      "reviews": 210
     },
     {
       "id": "descaler_pro",
@@ -298,7 +318,9 @@
           "zh": "",
           "en": ""
         }
-      }
+      },
+      "rating": 4.8,
+      "reviews": 167
     },
     {
       "id": "battery_pack",
@@ -325,7 +347,9 @@
           "zh": "",
           "en": ""
         }
-      }
+      },
+      "rating": 4.7,
+      "reviews": 143
     },
     {
       "id": "vacuum_cartridge",
@@ -352,7 +376,9 @@
           "zh": "",
           "en": ""
         }
-      }
+      },
+      "rating": 4.9,
+      "reviews": 98
     },
     {
       "id": "hdpe_board",
@@ -379,7 +405,9 @@
           "zh": "",
           "en": ""
         }
-      }
+      },
+      "rating": 4.8,
+      "reviews": 256
     },
     {
       "id": "oxford_pouch",
@@ -406,7 +434,9 @@
           "zh": "",
           "en": ""
         }
-      }
+      },
+      "rating": 4.7,
+      "reviews": 341
     },
     {
       "id": "water_bag",
@@ -433,7 +463,9 @@
           "zh": "",
           "en": ""
         }
-      }
+      },
+      "rating": 4.6,
+      "reviews": 229
     }
   ]
 }
