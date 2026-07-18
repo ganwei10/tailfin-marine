@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TailFin Marine · Sell Sheet</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --navy: #0f2740;
+    --navy2: #163a5c;
+    --teal: #1ba39c;
+    --amber: #f5a623;
+    --ink: #1c2b36;
+    --gray: #5b6b78;
+    --line: #d8e0e6;
+    --paper: #ffffff;
+  }
+  html, body {
+    font-family: "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: var(--ink);
+    background: #e9edf1;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  @page { size: A4 portrait; margin: 9mm; }
+  .sheet {
+    width: 192mm;
+    min-height: 279mm;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ===== Header ===== */
+  .top {
+    background: linear-gradient(120deg, var(--navy) 0%, var(--navy2) 100%);
+    color: #fff;
+    padding: 7mm 8mm 6mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  .top::after {
+    content: "";
+    position: absolute; right: 8mm; bottom: -1mm;
+    width: 26mm; height: 26mm;
+    background: url('assets/img/hero-tailgate.png') center/cover no-repeat;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,.25);
+  }
+  .brand { display: flex; align-items: center; gap: 3mm; }
+  .logo-mark {
+    width: 11mm; height: 11mm; border-radius: 50%;
+    background: var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 6mm; color: #fff;
+  }
+  .brand .b-name { font-size: 6.4mm; font-weight: 800; letter-spacing: .3px; }
+  .brand .b-sub { font-size: 2.7mm; color: #b9c9d6; margin-top: 1mm; }
+  .tagline {
+    text-align: right;
+    max-width: 120mm;
+    position: relative;
+    z-index: 2;
+  }
+  .tagline .t-main { font-size: 4.6mm; font-weight: 800; color: var(--amber); letter-spacing: .5px; }
+  .tagline .t-sub { font-size: 2.6mm; color: #cdd9e2; margin-top: 1mm; }
+  .tagline .t-flag { display:inline-block; margin-top:2mm; font-size:2.4mm; color:#0f2740; background:var(--amber); padding:0.6mm 2mm; border-radius:2px; font-weight:700; }
+
+  /* ===== Body ===== */
+  .body { padding: 5mm 8mm; flex: 1; display: flex; flex-direction: column; gap: 4mm; }
+
+  .lead {
+    display: flex; gap: 5mm; align-items: stretch;
+  }
+  .hero {
+    width: 92mm; flex: none;
+    background: #f4f7f9; border: 1px solid var(--line);
+    border-radius: 4px; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    padding: 3mm;
+  }
+  .hero img { max-width: 100%; max-height: 62mm; object-fit: contain; }
+  .hero-cap { font-size: 2.4mm; color: var(--gray); text-align:center; margin-top:1mm; }
+  .usp { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 2.6mm; }
+  .usp h3 { font-size: 3.6mm; color: var(--navy); margin-bottom: 0.5mm; }
+  .usp .u {
+    display: flex; gap: 2mm; align-items: flex-start;
+    font-size: 2.9mm; line-height: 1.45; color: var(--ink);
+  }
+  .usp .u .num {
+    flex: none; width: 6mm; height: 6mm; border-radius: 50%;
+    background: var(--teal); color:#fff; font-weight: 800; font-size: 3mm;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .usp .u b { color: var(--navy); }
+
+  /* ===== Lineup ===== */
+  .sec-title {
+    font-size: 3.4mm; font-weight: 800; color: var(--navy);
+    border-left: 4px solid var(--amber); padding-left: 2mm; margin-bottom: 1mm;
+  }
+  .lineup { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; }
+  .pcard {
+    border: 1px solid var(--line); border-radius: 4px; overflow: hidden;
+    display: flex; flex-direction: column; background: #fff;
+  }
+  .pcard .pimg { height: 24mm; background:#f4f7f9; display:flex; align-items:center; justify-content:center; padding: 2mm; }
+  .pcard .pimg img { max-height: 20mm; max-width: 100%; object-fit: contain; }
+  .pcard .pbody { padding: 2mm 2.4mm 2.6mm; flex: 1; display:flex; flex-direction:column; }
+  .pcard .pname { font-size: 2.8mm; font-weight: 700; color: var(--navy); line-height:1.25; }
+  .pcard .pzh { font-size: 2.3mm; color: var(--gray); margin-top:0.4mm; }
+  .pcard .pdesc { font-size: 2.3mm; color: var(--gray); line-height:1.35; margin: 1.2mm 0 1.6mm; flex:1; }
+  .pcard .pprice { font-size: 3.4mm; font-weight: 800; color: var(--amber); }
+  .pcard .pprice span { font-size: 2.2mm; color: var(--gray); font-weight: 500; }
+
+  /* ===== Partner strip ===== */
+  .partner {
+    background: var(--navy); color: #eaf1f6; border-radius: 4px;
+    padding: 3.5mm 4mm; display: flex; gap: 4mm; align-items: center;
+  }
+  .partner .ptext { flex: 1; }
+  .partner h3 { font-size: 3.2mm; color: var(--amber); margin-bottom: 1.4mm; }
+  .partner .pgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4mm 4mm; }
+  .partner .pi { font-size: 2.5mm; line-height: 1.35; }
+  .partner .pi b { color: #fff; }
+  .partner .pi::before { content: "▸ "; color: var(--teal); }
+  .partner .psnapshot {
+    flex: none; width: 52mm; background: #fff; color: var(--navy);
+    border-radius: 3px; padding: 2.6mm 3mm;
+  }
+  .partner .psnapshot .srow { display:flex; justify-content:space-between; font-size:2.5mm; padding:0.8mm 0; border-bottom:1px dashed var(--line); }
+  .partner .psnapshot .srow:last-child { border-bottom:none; }
+  .partner .psnapshot .srow b { color: var(--amber); }
+  .partner .psnapshot .stitle { font-size: 2.6mm; font-weight:800; text-align:center; margin-bottom:1mm; color:var(--navy); }
+
+  /* ===== Footer ===== */
+  .foot {
+    background: #0a1b2c; color: #9fb3c2; font-size: 2.5mm;
+    padding: 3mm 8mm; display:flex; justify-content: space-between; align-items:center;
+  }
+  .foot b { color:#fff; }
+  .foot .cta { color: var(--amber); font-weight:700; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- HEADER -->
+  <div class="top">
+    <div class="brand">
+      <div class="logo-mark">T</div>
+      <div>
+        <div class="b-name">TailFin Marine</div>
+        <div class="b-sub">Modular Off-Grid Fish-Processing Systems · 模块化离网钓后处理系统</div>
+      </div>
+    </div>
+    <div class="tagline">
+      <div class="t-main">CATCH. CLEAN. COOK. ANYWHERE.</div>
+      <div class="t-sub">Engineered for serious anglers, everywhere. The world's first powered, modular catch-to-freezer workstation.</div>
+      <div class="t-flag">PRODUCT SELL SHEET · 招商简版</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- LEAD: hero + USP -->
+    <div class="lead">
+      <div class="hero">
+        <div>
+          <img src="assets/img/pro-product.png" alt="Mobile Fish Factory Pro">
+          <div class="hero-cap">Mobile Fish Factory (Pro) — the complete powered system</div>
+        </div>
+      </div>
+      <div class="usp">
+        <h3>Why TailFin wins the dock</h3>
+        <div class="u"><div class="num">1</div><div><b>Powered, not passive.</b> Built-in 12/24V electric descaler + vacuum sealer clean &amp; preserve a full catch in minutes — no shore power, no manual scrubbing.</div></div>
+        <div class="u"><div class="num">2</div><div><b>Fully modular &amp; off-grid.</b> Battery, scaler, fillet knife, vacuum cartridge and hose swap in seconds; runs on 12/24V or its own battery, anywhere.</div></div>
+        <div class="u"><div class="num">3</div><div><b>Dock to freezer, one station.</b> Scale, fillet and vacuum-seal at the tailgate, deck or ice hole — then 12 recurring consumables drive repeat revenue.</div></div>
+      </div>
+    </div>
+
+    <!-- LINEUP -->
+    <div>
+      <div class="sec-title">The Lineup · 产品矩阵</div>
+      <div class="lineup">
+        <div class="pcard">
+          <div class="pimg"><img src="assets/img/mini-product.png" alt="Mini"></div>
+          <div class="pbody">
+            <div class="pname">The Pocket Scaler (Mini)</div>
+            <div class="pzh">掌上电动去鳞器</div>
+            <div class="pdesc">Palm-sized 12V descaler for kayak, travel &amp; quick jobs.</div>
+            <div class="pprice">$149<span> / unit</span></div>
+          </div>
+        </div>
+        <div class="pcard">
+          <div class="pimg"><img src="assets/img/standard-product.png" alt="Standard"></div>
+          <div class="pbody">
+            <div class="pname">Tailgate Workstation</div>
+            <div class="pzh">标准模块化工作站</div>
+            <div class="pdesc">The core modular station for truck tailgate &amp; boat deck.</div>
+            <div class="pprice">$499<span> / unit</span></div>
+          </div>
+        </div>
+        <div class="pcard">
+          <div class="pimg"><img src="assets/img/pro-product.png" alt="Pro"></div>
+          <div class="pbody">
+            <div class="pname">Mobile Fish Factory (Pro)</div>
+            <div class="pzh">移动鱼类加工站</div>
+            <div class="pdesc">Full powered system: descaler + vacuum + battery + knife.</div>
+            <div class="pprice">$999<span> / unit</span></div>
+          </div>
+        </div>
+        <div class="pcard">
+          <div class="pimg"><img src="assets/img/acc-kit.png" alt="Pro Kit"></div>
+          <div class="pbody">
+            <div class="pname">Pro Upgrade Kit</div>
+            <div class="pzh">专业升级套件</div>
+            <div class="pdesc">Turn any Standard into a Pro: vacuum + battery + knife.</div>
+            <div class="pprice">$499<span> / kit</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARTNER -->
+    <div class="partner">
+      <div class="ptext">
+        <h3>Why distributors partner with us · 分销合作理由</h3>
+        <div class="pgrid">
+          <div class="pi"><b>Category gap:</b> rivals sell passive HDPE boards ($66–$120); we own the powered niche.</div>
+          <div class="pi"><b>Healthy margins:</b> up to 50% off MSRP for national distributors.</div>
+          <div class="pi"><b>Recurring revenue:</b> 12 consumables per catch cycle — blades $29, bags $19, battery $149…</div>
+          <div class="pi"><b>Full support:</b> marketing kit, MAP &amp; region protection, certifications &amp; after-sales.</div>
+        </div>
+      </div>
+      <div class="psnapshot">
+        <div class="stitle">Distributor Snapshot · 合作速览</div>
+        <div class="srow"><span>MOQ</span><b>200 units / container</b></div>
+        <div class="srow"><span>National dist.</span><b>50% off MSRP</b></div>
+        <div class="srow"><span>Retail MAP</span><b>Protected</b></div>
+        <div class="srow"><span>Rebate</span><b>Tiered, 3–8%</b></div>
+        <div class="srow"><span>Lead time</span><b>30–45 days</b></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="foot">
+    <div>Partner with <b>TailFin Marine</b> · 期待与全球分销商、户外连锁及文旅渠道合作</div>
+    <div><span class="cta">hello@tailfinmarine.com</span> · www.tailfinmarine.com · Booth &amp; full catalog on request</div>
+  </div>
+
+</div>
+</body>
+</html>
