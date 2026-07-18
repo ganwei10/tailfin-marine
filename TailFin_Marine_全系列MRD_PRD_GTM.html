@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TailFin Marine · 全系列 MRD / PRD / GTM（皮卡 · 钓鱼船 · 游艇）</title>
+<style>
+  :root{
+    --navy:#0b2545; --navy2:#13315c; --teal:#1b998b; --teal-d:#137a6e;
+    --amber:#f5a623; --coral:#ff6b5e; --ink:#1f2933; --gray:#5b6b7b;
+    --gray-200:#e3e8ee; --gray-50:#f5f7fa; --white:#fff; --line:#d7dee6;
+    --p0:#ff6b5e; --p1:#f5a623; --p2:#1b998b; --land:#1b998b; --boat:#2f6fed; --yacht:#9b5de5;
+  }
+  *{box-sizing:border-box;} html,body{margin:0;padding:0;}
+  body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#fff;font-size:13px;line-height:1.65;}
+  .page{max-width:940px;margin:0 auto;padding:38px 44px;background:#fff;}
+  h1{font-size:24px;margin:0 0 4px;color:var(--navy);}
+  h2{font-size:18px;margin:30px 0 12px;color:var(--navy);border-left:5px solid var(--teal);padding-left:12px;}
+  h3{font-size:14.5px;margin:18px 0 8px;color:var(--navy2);}
+  h4{font-size:13px;margin:12px 0 6px;color:var(--teal-d);}
+  .sub{color:var(--gray);font-size:12.5px;margin:0 0 4px;}
+  .en{color:var(--teal-d);font-weight:400;font-size:12px;}
+  p{margin:8px 0;} .muted{color:var(--gray);}
+  .lede{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:18px 22px;border-radius:12px;font-size:13.5px;line-height:1.7;margin:16px 0 8px;}
+  .lede b{color:var(--amber);}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:12.2px;}
+  th,td{border:1px solid var(--line);padding:7px 9px;vertical-align:top;text-align:left;}
+  th{background:var(--navy);color:#fff;font-weight:600;}
+  tr:nth-child(even) td{background:var(--gray-50);}
+  td.ok{color:var(--p2);font-weight:700;} td.warn{color:#b8860b;font-weight:700;}
+  .pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700;color:#fff;}
+  .p0{background:var(--p0);} .p1{background:var(--p1);color:#3a2a00;} .p2{background:var(--p2);}
+  .land{background:var(--land);} .boat{background:var(--boat);} .yacht{background:var(--yacht);}
+  .callout{border:1px solid var(--teal);background:#eafaf7;border-left:5px solid var(--teal);padding:12px 16px;border-radius:8px;margin:14px 0;font-size:12.8px;}
+  .callout.amber{border-color:var(--amber);background:#fff7e8;}
+  .callout.boat{border-color:var(--boat);background:#eaf1fe;}
+  .callout.yacht{border-color:var(--yacht);background:#f5eefc;}
+  .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:12px 0;}
+  .card{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--gray-50);}
+  .card .t{font-weight:700;color:var(--navy);font-size:13px;margin-bottom:4px;}
+  .card.land{border-top:4px solid var(--land);} .card.boat{border-top:4px solid var(--boat);} .card.yacht{border-top:4px solid var(--yacht);}
+  .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0;}
+  .kpi div{background:var(--gray-50);border:1px solid var(--line);border-radius:9px;padding:10px;text-align:center;}
+  .kpi b{display:block;font-size:18px;color:var(--teal-d);} .kpi span{font-size:11px;color:var(--gray);}
+  .phase{border-left:4px solid var(--teal);padding:6px 0 6px 14px;margin:10px 0;}
+  .phase .ph{font-weight:700;color:var(--navy);}
+  .gantt{display:grid;grid-template-columns:180px repeat(24,1fr);gap:2px;font-size:9px;margin:10px 0;}
+  .gantt .lbl{grid-column:1;font-weight:600;color:var(--navy2);padding:4px 6px;align-self:center;}
+  .gantt .cell{height:20px;border-radius:3px;background:var(--gray-200);}
+  .gantt .cL{background:var(--land);} .gB{background:var(--boat);} .gY{background:var(--yacht);}
+  .legend{font-size:11px;color:var(--gray);margin:6px 0;}
+  .legend span{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin:0 4px 0 12px;}
+  ul,ol{margin:8px 0;padding-left:22px;} li{margin:4px 0;}
+  .toc{background:var(--gray-50);border:1px solid var(--line);border-radius:10px;padding:14px 20px;margin:16px 0;font-size:12.5px;}
+  .toc a{color:var(--teal-d);text-decoration:none;} .toc b{color:var(--navy);}
+  footer{margin-top:30px;border-top:1px solid var(--line);padding-top:14px;color:var(--gray);font-size:11.5px;}
+  .small{font-size:11px;color:var(--gray);}
+  @media print{body{font-size:11.5px;} .page{padding:18px 24px;} h2{break-after:avoid;} table{break-inside:avoid;}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1>TailFin Marine · 全系列 MRD / PRD / GTM</h1>
+  <p class="sub">含皮卡（陆地）· 钓鱼船（Vessel）· 游艇（Yacht）三场景的产品需求、研发定义与上市策略 &nbsp;<span class="en">Full-Line Market / Product / Go-To-Market Requirements</span></p>
+  <p class="small">文档性质：内部战略与执行文档（含供应链/工程内部术语）。BOM、成本、毛利、复用率均为基于现有 catalog 与产品架构的估算，最终以正式 BOM 报价单、认证机构文件与经销合同为准。本档整合并取代单独的《钓鱼船版方案》BOM 部分，并作为《商业计划书》《毛利分析》的权威更新来源。</p>
+
+  <div class="lede">
+    <b>核心战略：</b>以一套 <b>「中央仓 + 可插拔模块」平台</b> 纵向覆盖三大场景——<b>皮卡（陆地基准，已交付）→ 钓鱼船（海洋延伸，复用≈80%）→ 游艇（高端衍生，复用≈55%）</b>。越往后复用率递减，但每下一档都以前一档为底座，研发与开模投入被复利摊薄。钓鱼船是最优先的下一刀（复用最高、船长 KOL 滩头、合规门槛即信任差）；游艇是船版平台 + AC 适配器 + 奢华外观的下游溢价变体。
+  </div>
+
+  <div class="toc">
+    <b>目录</b><br>
+    执行摘要 · <a href="#mrd">Part 1 MRD（市场）</a> · <a href="#prd">Part 2 PRD（产品·含 BOM 总表）</a> · <a href="#gtm">Part 3 GTM（上市）</a> · <a href="#margin">Part 4 毛利分析</a> · <a href="#risk">Part 5 风险与里程碑</a> · 附录
+  </div>
+
+  <!-- 执行摘要 KPI -->
+  <div class="kpi">
+    <div><b>3</b><span>覆盖场景</span></div>
+    <div><b>11</b><span>规划 SKU（陆地4+船3+游艇2+套件）</span></div>
+    <div><b>80% → 55%</b><span>船/游艇 BOM 复用率（对陆地）</span></div>
+    <div><b>~20 周</b><span>钓鱼船版研发到量产</span></div>
+  </div>
+
+  <!-- ============ MRD ============ -->
+  <h2 id="mrd">Part 1 · MRD 市场需求文档 <span class="en">Market Requirements</span></h2>
+
+  <h3>1.1 市场背景与趋势</h3>
+  <p>全球休闲垂钓持续结构性增长：装备向<b>轻量化、便携化、模块化</b>演进；<b>智能与电动化</b>渗透率提升；<b>环保可持续</b>（可降解、防穿刺、锁鲜）成为购买要素；「钓鱼 + 露营 + 文旅」融合催生「钓后处理（Clean &amp; Cook）」新消费场景。现有市场以<b>被动式折叠去鳞台</b>（HDPE 台面）为主，动力去鳞、真空锁鲜与离网供电长期割裂——TailFin 首创「动力模块化钓后处理系统」占据品类空白。</p>
+
+  <h3>1.2 三场景需求定义</h3>
+  <div class="grid">
+    <div class="card land"><div class="t">皮卡 / 陆地（基准）</div>Job：停好车在尾门把鱼处理完。供电：12V 点烟器 / 内置电池。审美：粗犷实用、扛造。约束：车载收纳、防脏车内。</div>
+    <div class="card boat"><div class="t">钓鱼船 / Vessel</div>Job：在船甲板把鱼处理完、上岸即冷冻。供电：12/24V 船电 DC。审美：同粗犷实用。约束：<b>盐雾、摇摆、舷外排水合规、电气安全</b>。</div>
+    <div class="card yacht"><div class="t">游艇 / Yacht</div>Job：自己甲板上的 Catch-to-Table。供电：110/220V AC + 12/24V DC 多电压。审美：<b>颜值、静音、隐藏收纳</b>。约束：奢华外观、低噪、与内饰协调。</div>
+  </div>
+
+  <h3>1.3 用户画像</h3>
+  <table>
+    <thead><tr><th>场景</th><th>核心用户</th><th>购买动机</th><th>价格敏感</th><th>关键 KPI 人群</th></tr></thead>
+    <tbody>
+      <tr><td>皮卡</td><td>周末钓客、路亚玩家、露营钓旅</td><td>效率、不脏车、便携</td><td>中</td><td>大众（走量基础）</td></tr>
+      <tr><td>钓鱼船</td><td><b>Charter 船长（滩头 KOL）</b>、休闲渔船东、海钓俱乐部</td><td>ROI（多跑趟/鱼更鲜/客更满意）、耐用</td><td>低–中</td><td>重度用户 + 内容节点</td></tr>
+      <tr><td>游艇</td><td>游艇东、高端生活方式人群</td><td>体验、社交、甲板上的米其林感</td><td>低</td><td>高客单溢价</td></tr>
+    </tbody>
+  </table>
+
+  <h3>1.4 竞争格局（全场景统一对标）</h3>
+  <table>
+    <thead><tr><th>维度</th><th>TailFin 系统</th><th>Goplus 折叠台</th><th>MAGMA 砧板</th><th>RAILBLAZA</th></tr></thead>
+    <tbody>
+      <tr><td>产品形态</td><td><b>动力模块化钓后处理系统</b></td><td>折叠水槽台</td><td>HDPE 砧板</td><td>船用剖鱼砧板</td></tr>
+      <tr><td>动力去鳞</td><td class="ok">✓ 12/24V 电动</td><td>✗</td><td>✗</td><td>✗</td></tr>
+      <tr><td>真空锁鲜</td><td class="ok">✓ ≥-75kPa</td><td>✗</td><td>✗</td><td>✗</td></tr>
+      <tr><td>离网供电</td><td class="ok">✓ 电池 + 双充</td><td>✗</td><td>✗</td><td>✗</td></tr>
+      <tr><td>上船适配</td><td class="ok">✓ 船规/Vessel/游艇三版</td><td>✗ 仅陆地</td><td>△ 被动台面</td><td>△ 仅砧板</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">结论：竞品卖「更好的台面」，TailFin 卖「完整钓后处理系统 + 三场景覆盖」。价格对标的是「去鳞台+电动去鳞机+鱼刀+真空机+电源」组合总价，且一次购齐、即插即用、可离网——不在同一竞争维度。</div>
+
+  <h3>1.5 市场机会（规模支撑）</h3>
+  <ul>
+    <li>全球休闲垂钓装备 2025 约 <b>$14.8B → 2034 $24.4B</b>（CAGR 5.7%，Dimension）；广义渔具 2025 $16.5B → 2032 $22.08B（CAGR 4.25%）。</li>
+    <li>美国 2024 年 <b>5,790 万</b>钓鱼人口（创纪录，RBFF）；欧洲 870 万海钓者、年支出 €59 亿；西澳 75 万钓客、<b>$24 亿澳元</b>经济；中国 1.4 亿钓友、轻量化装备 CAGR 17.3%。</li>
+    <li><b>三场景 TAM/SAM/SOM（估算）</b>：TAM=全球钓具 $24.4B；SAM=便携钓后处理设备（陆地+船+游艇）≈ $3–4B；SOM（3 年目标）≈ $80–120M（以分级渠道渗透计）。</li>
+  </ul>
+
+  <!-- ============ PRD ============ -->
+  <h2 id="prd">Part 2 · PRD 产品需求文档 <span class="en">Product Requirements</span></h2>
+
+  <h3>2.1 全系产品矩阵总览</h3>
+  <table>
+    <thead><tr><th>场景</th><th>SKU</th><th>定位</th><th>建议 MSRP</th><th>平台底座</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="4">皮卡 / 陆地</td><td>Mini 口袋去鳞机</td><td>入门 LITE</td><td>$149</td><td>—（独立便携）</td></tr>
+      <tr><td>Standard 尾门工作站</td><td>基础</td><td>$499</td><td>陆地基准</td></tr>
+      <tr><td>Pro 移动鱼类工厂</td><td>旗舰</td><td>$999</td><td>陆地基准</td></tr>
+      <tr><td>Pro 升级套装 Kit</td><td>升级</td><td>$499</td><td>Standard→Pro</td></tr>
+      <tr><td rowspan="3">钓鱼船 / Vessel</td><td>Vessel Core 船规基础版</td><td>船用基础</td><td>$599</td><td>Standard + 船规层</td></tr>
+      <tr><td>Vessel Pro 船规旗舰版</td><td>船用旗舰</td><td>$1,149</td><td>Pro + 船规层</td></tr>
+      <tr><td>Vessel Kit 船用升级套件</td><td>上船套件</td><td>$149</td><td>给存量用户</td></tr>
+      <tr><td rowspan="2">游艇 / Yacht</td><td>Yacht Core 游艇版</td><td>奢华基础</td><td>$1,899</td><td>Vessel Core + 奢华层</td></tr>
+      <tr><td>Yacht Pro 游艇旗舰版</td><td>奢华旗舰</td><td>$2,899</td><td>Vessel Pro + 奢华层</td></tr>
+    </tbody>
+  </table>
+
+  <h3>2.2 平台化架构（跨场景复用内核）</h3>
+  <p>统一基础平台 = <b>中央仓双槽叠层（Pogo Pin 盲插）</b> + 五大即插即用模块：<b>动力去鳞机</b>（12V 有刷 / 24V 无刷，316 不锈钢刀头）、<b>电动鱼刀</b>（12V 往复，防水航空插口）、<b>真空密封 cartridge</b>（干湿两用 ≥-75kPa）、<b>24V 电池包</b>（离网 ≥2h，BMS 双充）、<b>HDPE 食品级砧板</b>。三场景共用此内核，差异仅在「环境适配层」。</p>
+
+  <h3>2.3 三场景 PRD 与 BOM 改动</h3>
+
+  <h4>2.3.1 皮卡 / 陆地版（已交付，基准 BOM）</h4>
+  <ul>
+    <li>箱体 ABS+PC 80×44×26cm；12V 100W 有刷去鳞机（Standard）/ 24V 200W 无刷（Pro）；循环给水 5L/min；接点烟器 12V 或 24V 电池；316 刀头、HDPE 砧板。</li>
+    <li>认证：消费电子级（FCC/CE 适用项），无船规要求。</li>
+  </ul>
+
+  <h4>2.3.2 钓鱼船 / Vessel 版（下一刀，P0 优先）</h4>
+  <div class="callout boat">
+    <b>P0 上船门票：</b>电气船规化（直连 12/24V 船电、防反接/低压保护，ABYC E-11）；IP67 接线盒与密封（3m×30min 不进水）；集水槽 + 舷外排水合规（MARPOL 惯例）；抗摇摆快装导轨夹具（适配 Ø22–32mm 栏杆）。<br>
+    <b>P1 差异化：</b>壳体 ASA+316 骨架（盐雾 96h）、ABYC/CE 认证、抗摇摆锁扣、接地绝缘。<br>
+    <b>P2 选配：</b>舷边排水泵适配器、316 砧板、夜航 LED、船电智能监测。
+  </div>
+
+  <h4>2.3.3 游艇 / Yacht 版（高端衍生，建在 Vessel 之上）</h4>
+  <div class="callout yacht">
+    <b>奢华外观（新开模）：</b>柚木纹 / 拉丝不锈钢面板，与游艇内饰协调；隐藏走线结构。<br>
+    <b>多电压自适应：</b>新增 110/220V AC 转换电源 + 12/24V DC，全球码头/船电通吃（这是相对陆地版最大的新增件）。<br>
+    <b>静音与减震：</b>静音电机版本 + 橡胶减震脚，避免打扰舱内客。<br>
+    <b>折叠收纳：</b>可收入游艇储物柜；氛围灯等精致配件。
+  </div>
+
+  <h3>2.4 BOM 总表（三场景复用矩阵）★ 已更新</h3>
+  <h4>2.4.1 100% 复用件（全场景通用，直接沿用）</h4>
+  <table>
+    <thead><tr><th>模块</th><th>现有件（catalog id）</th><th>船版</th><th>游艇版</th></tr></thead>
+    <tbody>
+      <tr><td>动力去鳞</td><td>12V/24V 去鳞机（descaler_std/pro）+ 316 刀头（scaler_blade）</td><td class="ok">100%</td><td class="ok">100%（静音版可选）</td></tr>
+      <tr><td>剖切</td><td>电动鱼刀（electric_knife）</td><td class="ok">100%</td><td class="ok">100%</td></tr>
+      <tr><td>真空</td><td>真空 cartridge（vacuum_cartridge）</td><td class="ok">100%</td><td class="ok">100%</td></tr>
+      <tr><td>供电</td><td>24V 电池包（battery_pack）</td><td class="ok">100%</td><td class="ok">100%</td></tr>
+      <tr><td>给水/砧板</td><td>PU 管（hose_replacement）/ HDPE 板（hdpe_board）</td><td class="ok">100%</td><td class="ok">100%</td></tr>
+      <tr><td>中控/工具</td><td>中央仓 + 鱼剪刀/牛津包/水袋</td><td class="ok">100%</td><td class="ok">100%</td></tr>
+    </tbody>
+  </table>
+
+  <h4>2.4.2 材料替换件（升级，非重开模）</h4>
+  <table>
+    <thead><tr><th>现有件</th><th>钓鱼船替换</th><th>游艇替换</th></tr></thead>
+    <tbody>
+      <tr><td>箱体</td><td>ABS+PC → ASA + 316 骨架</td><td>→ 柚木纹/拉丝钢奢华外壳（新开模）</td></tr>
+      <tr><td>紧固/密封</td><td>316 紧固 + 氟橡胶圈</td><td>316 紧固 + 船规硅胶（同船版）</td></tr>
+      <tr><td>插口/涂层</td><td>IP67 接头 + 抗 UV 盐雾涂层</td><td>IP67 接头 + 奢华表面处理</td></tr>
+      <tr><td>电机</td><td>沿用</td><td>静音电机版本 + 橡胶减震</td></tr>
+    </tbody>
+  </table>
+
+  <h4>2.4.3 新增件（当前无，按场景）</h4>
+  <table>
+    <thead><tr><th>新增件</th><th>钓鱼船</th><th>游艇</th><th>增量成本(估)</th></tr></thead>
+    <tbody>
+      <tr><td>导轨/夹具快装</td><td><span class="pill p0">P0</span></td><td>（复用船版）</td><td>+$18</td></tr>
+      <tr><td>集水槽+舷外排水</td><td><span class="pill p0">P0</span></td><td>（复用船版）</td><td>+$15</td></tr>
+      <tr><td>防反接/低压保护</td><td><span class="pill p0">P0</span></td><td>（复用船版）</td><td>+$12</td></tr>
+      <tr><td>IP67 接线盒+DC线束</td><td><span class="pill p0">P0</span></td><td>（复用船版）</td><td>+$14</td></tr>
+      <tr><td>抗摇摆锁扣/接地</td><td><span class="pill p1">P1</span></td><td>（复用船版）</td><td>+$11</td></tr>
+      <tr><td><b>110/220V AC 电源</b></td><td>✗</td><td><span class="pill p0">P0</span></td><td>+$55</td></tr>
+      <tr><td><b>奢华外壳/隐藏走线</b></td><td>✗</td><td><span class="pill p1">P1</span></td><td>+$220</td></tr>
+      <tr><td><b>静音电机+减震</b></td><td>✗</td><td><span class="pill p1">P1</span></td><td>+$70</td></tr>
+      <tr><td>折叠收纳/氛围灯</td><td>✗</td><td><span class="pill p2">P2</span></td><td>+$45</td></tr>
+    </tbody>
+  </table>
+
+  <h4>2.4.4 复用率与增量成本汇总</h4>
+  <table>
+    <thead><tr><th>场景</th><th>相对陆地 BOM 复用率</th><th>单台增量成本(估)</th><th>主要新增投入</th></tr></thead>
+    <tbody>
+      <tr><td>皮卡（基准）</td><td>100%</td><td>—</td><td>—</td></tr>
+      <tr><td>钓鱼船</td><td><b>≈80%</b></td><td>+$115/台</td><td>材料升级 + 上船附件（支架/排水/保护/接线）</td></tr>
+      <tr><td>游艇（对陆地）</td><td><b>≈55%</b></td><td>+$490/台</td><td>AC 电源 + 奢华外壳重开模 + 静音电机 + 隐藏走线</td></tr>
+      <tr><td>游艇（对船版）</td><td>≈70%</td><td>+$375/台</td><td>在船版之上加奢华层（复用船规电气）</td></tr>
+    </tbody>
+  </table>
+  <div class="callout amber"><b>为什么先做钓鱼船：</b>复用率最高（80%）→ 研发/开模最低 → 上市最快；且船版是游艇的平台底座，顺序做可复利复用，游艇仅是「船版 + AC + 奢华皮肤」的下游变体。</div>
+
+  <!-- ============ GTM ============ -->
+  <h2 id="gtm">Part 3 · GTM 上市策略 <span class="en">Go-To-Market</span></h2>
+
+  <h3>3.1 分阶段路线图（纵向铺场景，横向铺渠道）</h3>
+  <div class="phase"><span class="ph">阶段 0 · 陆地已交付：</span>Mini/Standard/Pro/Kit 在售，Amazon + 自营站 + 露营/钓具渠道跑通。</div>
+  <div class="phase"><span class="ph">阶段 1 · 钓鱼船优先（W1–20）：</span>EVT→船长种子 Beta→认证→量产；先打 Charter 船长滩头。</div>
+  <div class="phase"><span class="ph">阶段 2 · 渠道与 OEM：</span>海事分销商（West Marine/Fisheries Supply）、国内海钓店/游艇会、船厂 OEM 前装试点。</div>
+  <div class="phase"><span class="ph">阶段 3 · 游艇衍生：</span>船版量产后启动 Yacht（奢华层 + AC），走游艇会/高端海事渠道。</div>
+  <div class="phase"><span class="ph">阶段 4 · 品牌出海：</span>展会（METSTRADE/IBEX/中国渔博会/悉尼船展）+ 内容 + 三级分销全球化。</div>
+
+  <h3>3.2 渠道策略（分场景侧重）</h3>
+  <table>
+    <thead><tr><th>场景</th><th>主渠道</th><th>打法</th></tr></thead>
+    <tbody>
+      <tr><td>皮卡</td><td>露营/钓具连锁、Amazon、户外电商</td><td>大众内容 + 性价比走量</td></tr>
+      <tr><td>钓鱼船</td><td>海事分销商、船具店、船厂 OEM、船长 KOL</td><td>滩头船长种子包换内容与口碑</td></tr>
+      <tr><td>游艇</td><td>游艇会、高端海事零售、定制船厂</td><td>奢华体验 + 私域/会员</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3.3 定价策略（三场景 × 三级渠道）</h3>
+  <p>沿用三级分销：授权零售 70% / 区域经销商 60% / 国家分销 50% MSRP；含 MAP 价格保护、区域独家、阶梯返点 3–8%、认证售后支持。三场景 MSRP 见 §2.1 矩阵；船版/游艇版溢价由「船规电气 + 合规认证 + 奢华外观」支撑，毛利结构见 Part 4。</p>
+
+  <h3>3.4 内容与品牌</h3>
+  <ul>
+    <li><b>Charter 船长种子包：</b>寄 Vessel Pro 样机 + Kit + 备用刀头 + 真空袋；30 天实海试换 3 段视频 + 反馈表，达标样机归船长并享首批量分销权。</li>
+    <li><b>话术分众：</b>Charter「几趟回本」/ 休闲船东「甲板上的 Catch-to-Table」/ 游艇「你游艇上的米其林体验」/ 合规「船规级、ABYC/CE，敢上海」。</li>
+    <li><b>展会：</b>METSTRADE（阿姆斯特丹）、IBEX（美）、中国渔业博览会、悉尼船展实机演示。</li>
+  </ul>
+
+  <!-- ============ MARGIN ============ -->
+  <h2 id="margin">Part 4 · 毛利分析（已更新） <span class="en">Margin Analysis</span></h2>
+
+  <h3>4.1 三场景 BOM 成本与增量（估算）</h3>
+  <table>
+    <thead><tr><th>SKU</th><th>MSRP</th><th>工厂成本(估)</th><th>单台增量 vs 陆地基准</th></tr></thead>
+    <tbody>
+      <tr><td>Standard</td><td>$499</td><td>~$160</td><td>基准</td></tr>
+      <tr><td>Pro</td><td>$999</td><td>~$420</td><td>+$260</td></tr>
+      <tr><td>Vessel Core</td><td>$599</td><td>~$285</td><td>+$115</td></tr>
+      <tr><td>Vessel Pro</td><td>$1,149</td><td>~$570</td><td>+$150</td></tr>
+      <tr><td>Yacht Core</td><td>$1,899</td><td>~$675</td><td>+$515</td></tr>
+      <tr><td>Yacht Pro</td><td>$2,899</td><td>~$1,070</td><td>+$650</td></tr>
+    </tbody>
+  </table>
+
+  <h3>4.2 三级渠道毛利（以 MSRP 计）</h3>
+  <table>
+    <thead><tr><th>层级</th><th>拿货折扣</th><th>Vessel Core($599)</th><th>Vessel Pro($1,149)</th><th>Yacht Pro($2,899)</th></tr></thead>
+    <tbody>
+      <tr><td>授权零售</td><td>70%</td><td>$419.3</td><td>$804.3</td><td>$2,029.3</td></tr>
+      <tr><td>区域经销</td><td>60%</td><td>$359.4</td><td>$689.4</td><td>$1,739.4</td></tr>
+      <tr><td>国家分销</td><td>50%</td><td>$299.5</td><td>$574.5</td><td>$1,449.5</td></tr>
+    </tbody>
+  </table>
+  <p class="small">示例：国家分销拿 Vessel Pro 付 $574.5，建议零售 $1,149 → 渠道潜在毛利 $574.5（未计配件复购）。所有价格以正式报价单为准。</p>
+
+  <h3>4.3 整柜 / 年度测算（示例）</h3>
+  <table>
+    <thead><tr><th>组合（整柜 200 台）</th><th>MSRP 合计</th><th>国家分销拿货</th><th>渠道潜在毛利</th></tr></thead>
+    <tbody>
+      <tr><td>100×Vessel Core + 100×Vessel Pro</td><td>$174,800</td><td>$87,400</td><td>$87,400</td></tr>
+      <tr><td>50×Vessel Pro + 50×Yacht Pro</td><td>$202,400</td><td>$101,200</td><td>$101,200</td></tr>
+    </tbody>
+  </table>
+
+  <h3>4.4 配件复购贡献</h3>
+  <p>12 款通用配件（刀头 $29 / 真空袋 $19 / 鱼刀 $79 / 电池 $149 等）全系列通用，构成持续消耗收入。目标：船版/游艇版上线 12 个月后，配件复购贡献 ≥15% 该场景收入。</p>
+
+  <!-- ============ RISK ============ -->
+  <h2 id="risk">Part 5 · 风险与里程碑 <span class="en">Risk & Milestones</span></h2>
+
+  <h3>5.1 风险矩阵</h3>
+  <table>
+    <thead><tr><th>风险</th><th>影响场景</th><th>缓解</th></tr></thead>
+    <tbody>
+      <tr><td>认证周期超预期（ABYC/CE）</td><td>船/游艇</td><td>阶段 0 启动询价排期；并行送检</td></tr>
+      <tr><td>316 支架/奢华外壳开模延期</td><td>船/游艇</td><td>阶段 1 前锁定 2 家备份供应商</td></tr>
+      <tr><td>船长种子反馈偏离预期</td><td>船</td><td>Beta 仅软改，硬改留 PVT</td></tr>
+      <tr><td>船电/岸电接口标准不一</td><td>船/游艇</td><td>宽压 + 防反接 + 多规格线束/AC 适配器</td></tr>
+      <tr><td>游艇奢华外壳成本失控</td><td>游艇</td><td>先小批量验证溢价接受度再放量</td></tr>
+    </tbody>
+  </table>
+
+  <h3>5.2 里程碑 Gantt（陆地已交付，船版约 20 周，游艇滞后 ~2 季度）</h3>
+  <div class="gantt">
+    <div class="lbl">钓鱼船 EVT</div>
+    <div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="lbl">钓鱼船 Beta+认证</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="lbl">钓鱼船 量产 GTM</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell cB"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="lbl">游艇 衍生研发</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell cY"></div><div class="cell cY"></div><div class="cell cY"></div><div class="cell cY"></div><div class="cell cY"></div><div class="cell cY"></div><div class="cell cY"></div><div class="cell cY"></div><div class="cell cY"></div>
+  </div>
+  <div class="legend">
+    <span style="background:var(--boat)"></span>钓鱼船
+    <span style="background:var(--yacht)"></span>游艇
+    &nbsp;（每格 = 1 个月；陆地版已交付不在图内）
+  </div>
+
+  <footer>
+    <p><strong>文档归属</strong> · TailFin Marine 内部战略与执行文档。本档整合 MRD/PRD/GTM，并作为《商业计划书》《毛利分析》的权威更新来源，取代单独的《钓鱼船版方案》BOM 部分。所有价格、成本、复用率、毛利为估算，最终以正式 BOM 报价单、认证机构文件与经销合同为准。</p>
+    <p class="small">关联文档：TailFin_Marine_商业介绍.html（商业计划书/已同步更新产品矩阵）· TailFin_Marine_SellSheet.html（A4 招商简版）· TailFin_Marine_钓鱼船版方案.html（钓鱼船专项）· data/products.json（BOM 基准源）。</p>
+  </footer>
+
+</div>
+</body>
+</html>

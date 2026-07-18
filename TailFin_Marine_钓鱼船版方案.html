@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TailFin Marine · 钓鱼船版（Vessel Edition）具体可执行方案</title>
+<style>
+  :root{
+    --navy:#0b2545; --navy2:#13315c; --teal:#1b998b; --teal-d:#137a6e;
+    --amber:#f5a623; --coral:#ff6b5e; --ink:#1f2933; --gray:#5b6b7b;
+    --gray-200:#e3e8ee; --gray-50:#f5f7fa; --white:#ffffff; --line:#d7dee6;
+    --ok:#1b998b; --warn:#f5a623; --p0:#ff6b5e; --p1:#f5a623; --p2:#1b998b;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    color:var(--ink);background:#fff;font-size:13px;line-height:1.65;}
+  .page{max-width:920px;margin:0 auto;padding:38px 44px;background:#fff;}
+  h1{font-size:25px;margin:0 0 4px;color:var(--navy);letter-spacing:.3px;}
+  h2{font-size:18px;margin:30px 0 12px;color:var(--navy);border-left:5px solid var(--teal);
+    padding-left:12px;}
+  h3{font-size:14.5px;margin:18px 0 8px;color:var(--navy2);}
+  .sub{color:var(--gray);font-size:12.5px;margin:0 0 4px;}
+  .en{color:var(--teal-d);font-weight:400;font-size:12px;}
+  p{margin:8px 0;}
+  .muted{color:var(--gray);}
+  .lede{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;
+    padding:18px 22px;border-radius:12px;font-size:13.5px;line-height:1.7;margin:16px 0 8px;}
+  .lede b{color:var(--amber);}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:12.3px;}
+  th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left;}
+  th{background:var(--navy);color:#fff;font-weight:600;}
+  tr:nth-child(even) td{background:var(--gray-50);}
+  td.ok{color:var(--ok);font-weight:600;}
+  td.warn{color:#b8860b;font-weight:600;}
+  .pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700;color:#fff;}
+  .p0{background:var(--p0);} .p1{background:var(--p1);color:#3a2a00;} .p2{background:var(--p2);}
+  .callout{border:1px solid var(--teal);background:#eafaf7;border-left:5px solid var(--teal);
+    padding:12px 16px;border-radius:8px;margin:14px 0;font-size:12.8px;}
+  .callout.amber{border-color:var(--amber);background:#fff7e8;}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+  .card{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--gray-50);}
+  .card.dark{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border:none;}
+  .card.dark h3{color:#fff;} .card.dark .price{color:var(--amber);font-size:22px;font-weight:800;}
+  .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0;}
+  .kpi div{background:var(--gray-50);border:1px solid var(--line);border-radius:9px;padding:10px;text-align:center;}
+  .kpi b{display:block;font-size:19px;color:var(--teal-d);}
+  .kpi span{font-size:11px;color:var(--gray);}
+  .phase{border-left:4px solid var(--teal);padding:6px 0 6px 14px;margin:10px 0;}
+  .phase .ph{font-weight:700;color:var(--navy);}
+  .gantt{display:grid;grid-template-columns:200px repeat(20,1fr);gap:2px;font-size:10px;margin:10px 0;}
+  .gantt .lbl{grid-column:1;font-weight:600;color:var(--navy2);padding:4px 6px;align-self:center;}
+  .gantt .cell{height:22px;border-radius:3px;background:var(--gray-200);}
+  .gantt .c0{background:#cfe9e4;} .gantt .c1{background:var(--teal);} .gantt .c2{background:var(--amber);}
+  .gantt .c3{background:var(--coral);} .gantt .c4{background:var(--navy);}
+  .legend{font-size:11px;color:var(--gray);margin:6px 0;}
+  .legend span{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin:0 4px 0 12px;}
+  ul,ol{margin:8px 0;padding-left:22px;} li{margin:4px 0;}
+  .tag{font-size:11px;background:var(--gray-50);border:1px solid var(--line);border-radius:5px;padding:1px 7px;color:var(--gray);}
+  footer{margin-top:30px;border-top:1px solid var(--line);padding-top:14px;color:var(--gray);font-size:11.5px;}
+  .small{font-size:11px;color:var(--gray);}
+  @media print{ body{font-size:11.5px;} .page{padding:18px 24px;} h2{break-after:avoid;} table{break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1>TailFin Marine · 钓鱼船版（Vessel Edition）</h1>
+  <p class="sub">具体可执行方案 · 产品定义 / BOM 复用 / 工程改动 / 研发排期 / GTM / 成本毛利 &nbsp;<span class="en">Executive Plan for the Fishing-Boat Variant</span></p>
+  <p class="small">文档性质：内部执行方案（含供应链/工程内部术语，不对外）。数据除特别标注外为基于现有产品架构的估算，最终以正式 BOM 报价与认证机构出具文件为准。</p>
+
+  <div class="lede">
+    <b>结论先行：</b>钓鱼船版是现有皮卡版（陆地版）最自然的海洋延伸——核心电子、电机、电池、真空、刀头、中央仓全部 100% 沿用（本就带 316 不锈钢 + 防水航空插口 + 24V 电池基因），仅需「材料加固 + 上船附件 + 电气合规」三类改动，<b>BOM 复用率约 80%</b>。建议优先于游艇版推进，并同步沉淀为「Vessel 平台」，未来游艇版仅是在此之上加 AC 适配器 + 奢华外观的下游变体。
+  </div>
+
+  <!-- 1. 产品定义 -->
+  <h2>一、产品定义与 SKU 规划 <span class="en">Product Definition & SKUs</span></h2>
+  <p>钓鱼船场景的真实 Job-to-be-done 与皮卡一致：「在船上把鱼处理完、上岸即冷冻」。差异只在供电（船电 12/24V DC 而非点烟器/电池）与受力环境（盐雾、摇摆、舷外排水合规）。据此规划三个 SKU：</p>
+
+  <div class="grid">
+    <div class="card dark">
+      <h3>Vessel Core · 船规基础版</h3>
+      <div class="price">建议 MSRP $599</div>
+      <p class="small" style="color:#cfe9e4">基于 Standard（$499）改。面向休闲渔船东、小型 charter、海钓俱乐部。保留 12V 100W 去鳞机 + 循环给水 + HDPE 砧板，新增导轨夹具、集水槽排水、防反接模块、IP67 接线盒。</p>
+    </div>
+    <div class="card dark">
+      <h3>Vessel Pro · 船规旗舰版</h3>
+      <div class="price">建议 MSRP $1,149</div>
+      <p class="small" style="color:#cfe9e4">基于 Pro（$999）改。面向专业 charter、商业渔船、游艇钓台。24V 无刷去鳞 + 电动鱼刀 + 中央仓真空 + 24V 电池离网，全船规化（316 框架、盐雾认证、双充船电）。</p>
+    </div>
+    <div class="card">
+      <h3>Vessel Kit · 船用升级套件</h3>
+      <p class="small">给已购 Standard / Pro 的存量用户「上船」。含导轨/夹具支架 + DC 直连线束 + 防反接/低压保护模块 + 集水槽舷外排水套件 + 316 紧固件包。建议 MSRP $149。</p>
+    </div>
+    <div class="card">
+      <h3>复用定位</h3>
+      <p class="small">Vessel 不是新品类，是<b>平台的一个「环境适配层」</b>。陆地版 / 船版共享同一中央仓、同一套模块（去鳞/刀/真空/电池/砧板）。未来此层再叠加「游艇奢华皮肤 + AC 适配器」即成本最低的高端变体。</p>
+    </div>
+  </div>
+
+  <!-- 2. BOM 三表 -->
+  <h2>二、BOM 复用 / 替换 / 新增 三张表 <span class="en">BOM Reuse / Substitute / New</span></h2>
+  <p class="muted">下表部件名全部取自现有 catalog 与已交付产品架构，确保复用清单落在真实物料上，而非空想。</p>
+
+  <h3>2.1 100% 复用件（不动，直接沿用）</h3>
+  <table>
+    <thead><tr><th>模块</th><th>现有件（catalog id）</th><th>为何可直接上船</th><th>沿用率</th></tr></thead>
+    <tbody>
+      <tr><td>去鳞动力</td><td>12V 有刷 / 24V 无刷去鳞机（descaler_std / descaler_pro）</td><td>316 不锈钢刀头（已 72h 盐雾）、防水机身</td><td class="ok">100%</td></tr>
+      <tr><td>刀头</td><td>316 不锈钢去鳞刀头替换装（scaler_blade）</td><td>本就 316 海军级，多瓣快装卡扣</td><td class="ok">100%</td></tr>
+      <tr><td>剖切</td><td>12V 往复式电动鱼刀（electric_knife）</td><td>防水航空插口、即插即用</td><td class="ok">100%</td></tr>
+      <tr><td>真空</td><td>真空密封 cartridge（vacuum_cartridge）</td><td>干湿两用 ≥-75kPa、含液体收集盒、Pogo Pin 接入</td><td class="ok">100%</td></tr>
+      <tr><td>供电</td><td>24V 6S1P 电池包（battery_pack）</td><td>本就 12/24V，直对船电母线</td><td class="ok">100%</td></tr>
+      <tr><td>给水</td><td>PU 进水管 3m + 重力不锈钢滤网（hose_replacement）</td><td>防踩踏、可接船用活水</td><td class="ok">100%</td></tr>
+      <tr><td>砧板</td><td>HDPE 食品级测量砧板（hdpe_board）</td><td>食品级、导流槽；船版作基础配置沿用</td><td class="ok">100%</td></tr>
+      <tr><td>中控</td><td>中央仓双槽叠层 + Pogo Pin 模块接入 + 工具抽屉</td><td>即插即用架构，平台级复用</td><td class="ok">100%</td></tr>
+      <tr><td>工具</td><td>鱼剪刀 / 牛津布包 / 折叠水袋（scissors / oxford_pouch / water_bag）</td><td>通用全系列</td><td class="ok">100%</td></tr>
+    </tbody>
+  </table>
+
+  <h3>2.2 材料替换件（升级，非重开模）</h3>
+  <table>
+    <thead><tr><th>现有件</th><th>船版替换</th><th>目的</th><th>增量成本(估)</th></tr></thead>
+    <tbody>
+      <tr><td>箱体 ABS+PC</td><td>船规 ASA 外壳 + 316 不锈钢骨架（关键承力/快装点）</td><td>抗 UV、抗盐雾、长期海上不变形</td><td>+$28</td></tr>
+      <tr><td>紧固件 / 螺栓</td><td>升级 316 不锈钢（现多为 304/碳钢）</td><td>防海水锈蚀</td><td>+$6</td></tr>
+      <tr><td>密封圈 / O 圈</td><td>氟橡胶 / 船规硅胶</td><td>抗海水、耐老化</td><td>+$4</td></tr>
+      <tr><td>外部涂层</td><td>抗 UV + 抗盐雾粉末喷涂</td><td>外观耐久</td><td>+$5</td></tr>
+      <tr><td>模块航空插口</td><td>升级 IP67 级密封接头（现防水级）</td><td>防高压水柱 / 浪花</td><td>+$7</td></tr>
+    </tbody>
+  </table>
+
+  <h3>2.3 新增件（上船必需，当前无）</h3>
+  <table>
+    <thead><tr><th>新增件</th><th>功能</th><th>必要性</th><th>增量成本(估)</th></tr></thead>
+    <tbody>
+      <tr><td>导轨 / 夹具快装支架（Rail Mount / Clamp）</td><td>锁到船栏杆 / 船舷 / 杆座，抗摇摆</td><td><span class="pill p0">P0 上船门槛</span></td><td>+$18</td></tr>
+      <tr><td>集水槽 + 舷外排水套件</td><td>合规收集鱼鳞血水，接管排出舷外</td><td><span class="pill p0">P0 合规</span></td><td>+$15</td></tr>
+      <tr><td>防反接 + 低压保护模块</td><td>直连船电安全（反接 / 欠压 / 过压保护）</td><td><span class="pill p0">P0 安全</span></td><td>+$12</td></tr>
+      <tr><td>IP67 接线盒 + DC 直连线束</td><td>接船电母线 / 开关面板，密封防尘水</td><td><span class="pill p0">P0 电气</span></td><td>+$14</td></tr>
+      <tr><td>抗摇摆防滑脚 + 旋转锁扣</td><td>甲板湿滑环境下稳固不位移</td><td><span class="pill p1">P1</span></td><td>+$6</td></tr>
+      <tr><td>接地 / 绝缘组件（Bonding）</td><td>满足 ABYC 电气接地要求</td><td><span class="pill p1">P1 认证</span></td><td>+$5</td></tr>
+      <tr><td>舷边排水泵适配器（可选）</td><td>接船用舱底泵，强排水场景</td><td><span class="pill p2">P2 选配</span></td><td>+$22</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <b>BOM 复用率测算：</b>标准版（Standard）约 35 个一级物料中，29 项 100% 沿用，4 项材料升级，约 7 项新增（含支架/排水/保护/接线）。按「沿用物料金额 ÷ 总物料金额」估算 <b>复用率 ≈ 78–82%</b>；NRE 仅来自替换件改模 + 新增件开模，远低于游艇版（需补 AC 电源+奢华外壳重开模）。
+  </div>
+
+  <!-- 3. 工程改动清单 -->
+  <h2>三、工程改动清单（按 P0 / P1 排序）<span class="en">Engineering Change List</span></h2>
+
+  <h3>P0 — 上船门票（不做不能出海）</h3>
+  <table>
+    <thead><tr><th>改动项</th><th>技术规格</th><th>验收标准</th><th>负责</th></tr></thead>
+    <tbody>
+      <tr><td>电气船规化</td><td>直连 12/24V 船电；防反接、低压切断（10.5V/21V）、过压保护（&lt;32V）；符合 ABYC E-11</td><td>反接 0 损坏；欠压自动断；盐雾 72h 后功能正常</td><td>电子</td></tr>
+      <tr><td>IP67 接线与密封</td><td>IP67 接线盒 + 密封接头；整机关键缝硅胶密封</td><td>3m 水深 30min 不进水（IEC 60529）</td><td>结构</td></tr>
+      <tr><td>舷外排水合规</td><td>集水槽 + 可接管排水口，符合 MARPOL 船用生活污水/鱼废料排放惯例</td><td>无外溢；可接标准舷外排水管</td><td>结构</td></tr>
+      <tr><td>抗摇摆快装</td><td>316 导轨夹具，适配 Ø22–32mm 船栏杆 / 杆座</td><td>模拟 25° 横摇不脱落；单手 10s 拆装</td><td>结构</td></tr>
+    </tbody>
+  </table>
+
+  <h3>P1 — 差异化与认证（出海后竞争力）</h3>
+  <table>
+    <thead><tr><th>改动项</th><th>技术规格</th><th>验收标准</th><th>负责</th></tr></thead>
+    <tbody>
+      <tr><td>壳体材料升级</td><td>ASA + 316 骨架；抗 UV、盐雾 96h</td><td>96h 盐雾无基材腐蚀；色差 ΔE&lt;3</td><td>结构/采购</td></tr>
+      <tr><td>ABYC / CE 认证</td><td>电气 ABYC E-11；整机 CE（LVD/EMC 适用项）</td><td>取得认证机构出具报告</td><td>品质/外部</td></tr>
+      <tr><td>抗摇摆稳固件</td><td>防滑脚 + 旋转锁扣 + 设备固定带</td><td>湿滑甲板 15° 倾角不位移</td><td>结构</td></tr>
+      <tr><td>接地 / 绝缘</td><td>金属件 ABYC 接地；双重绝缘</td><td>漏电流 &lt; 0.25mA；接地电阻 &lt; 0.1Ω</td><td>电子</td></tr>
+    </tbody>
+  </table>
+
+  <h3>P2 — 选配增强（首批量后可迭代）</h3>
+  <ul>
+    <li>舷边排水泵适配器（接舱底泵系统）；</li>
+    <li>316 砧板选配（替换 HDPE，更耐用、更\"船感\"）；</li>
+    <li>夜航 LED 工作灯（12/24V 直供）；</li>
+    <li>船电智能监测（电压/电流显示屏，复用电池 BMS 数据）。</li>
+  </ul>
+
+  <!-- 4. 研发排期 -->
+  <h2>四、研发排期（Gantt，约 20 周）<span class="en">Development Timeline</span></h2>
+  <p class="muted">假设起点为方案批准周（W0）。节奏：先过 P0 上船门槛与船长种子 beta，再走认证与量产。</p>
+  <div class="gantt">
+    <div class="lbl">P0 调研/认证规划</div>
+    <div class="cell c0"></div><div class="cell c0"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+
+    <div class="lbl">P1 EVT 工程样机</div>
+    <div class="cell"></div><div class="cell"></div>
+    <div class="cell c1"></div><div class="cell c1"></div><div class="cell c1"></div><div class="cell c1"></div><div class="cell c1"></div><div class="cell c1"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+
+    <div class="lbl">P2 船长种子 Beta</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell c2"></div><div class="cell c2"></div><div class="cell c2"></div><div class="cell c2"></div><div class="cell c2"></div><div class="cell c2"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+
+    <div class="lbl">P3 认证 + PVT</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell c3"></div><div class="cell c3"></div><div class="cell c3"></div><div class="cell c3"></div><div class="cell c3"></div><div class="cell c3"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+
+    <div class="lbl">P4 量产 + GTM</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell c4"></div><div class="cell c4"></div><div class="cell c4"></div><div class="cell c4"></div><div class="cell c4"></div><div class="cell c4"></div><div class="cell c4"></div><div class="cell c4"></div>
+  </div>
+  <div class="legend">
+    <span style="background:#cfe9e4"></span>规划
+    <span style="background:var(--teal)"></span>EVT
+    <span style="background:var(--amber)"></span>船长 Beta
+    <span style="background:var(--coral)"></span>认证/PVT
+    <span style="background:var(--navy)"></span>量产/GTM
+    &nbsp;（每格 = 1 周，共 20 周）
+  </div>
+
+  <div class="phase"><span class="ph">阶段 0 · 调研与认证规划（W1–2）：</span>锁定目标市场船规（美 ABYC / 欧 CE / 澳 USCG 参照）；供应商询价（316 支架、IP67 件）；输出 PRD 与认证清单。</div>
+  <div class="phase"><span class="ph">阶段 1 · EVT 工程样机（W3–8）：</span>完成 P0 电气/结构改动；打样 5 台船版样机；内部盐雾/IP67/横摇摸底。</div>
+  <div class="phase"><span class="ph">阶段 2 · 船长种子 Beta（W9–14）：</span>寄 10 位 charter 船长实海试；回收反馈 + 海试视频 + 改进清单（见第五节）。</div>
+  <div class="phase"><span class="ph">阶段 3 · 认证 + PVT（W15–20）：</span>送检 ABYC/CE；试产 50–100 台 PVT；锁定 BOM 与 SOP。</div>
+  <div class="phase"><span class="ph">阶段 4 · 量产 + GTM（W21+）：</span>首批量产（建议 MOQ 200 台）；启动渠道与展会（见第五节）。</div>
+
+  <!-- 5. GTM -->
+  <h2>五、GTM 上市方案 <span class="en">Go-To-Market</span></h2>
+
+  <h3>5.1 滩头：Charter 船长种子包（最低成本拿内容+口碑）</h3>
+  <p><b>寄样清单（每套）：</b>Vessel Pro 样机 1 台 + Vessel Kit 1 套 + 备用 316 刀头 3 片 + 防穿刺真空袋 20 片 + 品牌贴纸/旗 + 使用卡。</p>
+  <p><b>合作话术要点：</b>「免费上船试用 30 天；您只需在出海带客时自然使用、拍 3 段实海试短视频（去鳞/剖切/真空），并给一份真实反馈表。达标即样机归您，并享首批量分销权。」——用一台样机换一条带货视频 + 一个渠道节点。</p>
+  <p><b>筛选标准：</b>沿岸 charter、日接待 ≥6 客、有社媒（YouTube/Instagram/TikTok）≥5k 粉、船龄 &lt;10 年（设备好装）。首批 10 人，美/欧/澳各 3–4 人。</p>
+
+  <h3>5.2 渠道与铺货</h3>
+  <table>
+    <thead><tr><th>渠道</th><th>代表</th><th>打法</th></tr></thead>
+    <tbody>
+      <tr><td>海事分销商</td><td>West Marine、Fisheries Supply（美）；国内海钓装备连锁、游艇会</td><td>走既有「国家分销 50% off MSRP」政策，上架 Vessel 系列</td></tr>
+      <tr><td>船具/游艇店</td><td>区域船用零售</td><td>授权零售 70% off，配多语言场景图与视频素材</td></tr>
+      <tr><td>船厂 OEM 前装</td><td>钓艇/工作艇厂</td><td>设计阶段把 Vessel 做成「前装选配」，进图纸即长期锁量（P4 试点 1–2 家）</td></tr>
+      <tr><td>电商/内容</td><td>自营站 + Amazon（已有）+ 海事垂直站</td><td>船长实测视频投流；「船规级、敢上海」信任差话术</td></tr>
+      <tr><td>展会</td><td>METSTRADE（阿姆斯特丹）、IBEX（美）、中国渔业博览会、悉尼船展</td><td>实机上海演示 + 索取目录/样品</td></tr>
+    </tbody>
+  </table>
+
+  <h3>5.3 话术分众</h3>
+  <ul>
+    <li><b>Charter：</b>「靠岸前把鱼处理好 → 多跑一趟、鱼更鲜、客人更满意、几趟回本」（ROI 驱动）。</li>
+    <li><b>休闲船东：</b>「在你自己甲板上的 Catch-to-Table」（体验/社交驱动）。</li>
+    <li><b>合规背书：</b>「船规级、ABYC/CE，敢上海」——和路边 HDPE 去鳞台最大的信任差。</li>
+  </ul>
+
+  <!-- 6. 成本毛利 -->
+  <h2>六、成本与毛利测算（估算）<span class="en">Cost & Margin</span></h2>
+  <div class="kpi">
+    <div><b>~80%</b><span>BOM 复用率</span></div>
+    <div><b>+$115</b><span>单台船版增量成本(估)</span></div>
+    <div><b>+$100–150</b><span>MSRP 提价区间</span></div>
+    <div><b>20 周</b><span>研发到量产</span></div>
+  </div>
+  <table>
+    <thead><tr><th>SKU</th><th>陆地版 MSRP</th><th>船版 MSRP(建议)</th><th>增量成本(估)</th><th>工厂成本(估)</th><th>国家分销价(50%)</th></tr></thead>
+    <tbody>
+      <tr><td>Vessel Core</td><td>$499</td><td>$599</td><td>+$115</td><td>~$285</td><td>$299.5</td></tr>
+      <tr><td>Vessel Pro</td><td>$999</td><td>$1,149</td><td>+$150</td><td>~$520</td><td>$574.5</td></tr>
+      <tr><td>Vessel Kit</td><td>—</td><td>$149</td><td>—</td><td>~$70</td><td>$74.5</td></tr>
+    </tbody>
+  </table>
+  <p class="small">说明：工厂成本为基于现有 Standard/Pro 物料 + 增量改动的估算（含首批量认证摊销约 $10–20/台）；国家分销价按 MSRP 50% 计。最终以正式 BOM 报价单为准。毛利结构沿用已交付商业介绍中的三级分销政策。</p>
+
+  <!-- 7. 风险 -->
+  <h2>七、风险与依赖 <span class="en">Risks & Dependencies</span></h2>
+  <table>
+    <thead><tr><th>风险</th><th>影响</th><th>缓解</th></tr></thead>
+    <tbody>
+      <tr><td>认证周期超预期（ABYC/CE）</td><td>推迟上市</td><td>阶段 0 即启动询价+排期；并行送检</td></tr>
+      <tr><td>316 支架/快装件开模延期</td><td>EVT 卡点</td><td>阶段 1 前锁定 2 家供应商备份</td></tr>
+      <tr><td>船长种子反馈偏离预期</td><td>改模成本</td><td>Beta 阶段仅软改（可调支架/排水），硬改留到 PVT</td></tr>
+      <tr><td>船电接口标准不一（12/24V/舷外）</td><td>适配复杂</td><td>防反接/宽压模块覆盖主流；提供多规格线束</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 8. KPI -->
+  <h2>八、成功指标（KPI）<span class="en">Success Metrics</span></h2>
+  <ul>
+    <li><b>产品：</b>通过 IP67 + 96h 盐雾 + 25° 横摇三项门槛；取得 ABYC/CE 报告。</li>
+    <li><b>内容：</b>船长种子计划产出 ≥10 条实海试视频，总播放 ≥50 万。</li>
+    <li><b>渠道：</b>首批量（200 台）上市 90 天内签约 ≥3 家海事分销商 / 1 家船厂 OEM 试点。</li>
+    <li><b>商业：</b>船版毛利率不低于陆地版同档；耗材（刀头/真空袋）复购贡献 ≥15% 船版收入。</li>
+  </ul>
+
+  <div class="callout amber">
+    <b>下一步建议（立即可做的两件事）：</b>① 启动 <b>316 支架 + IP67 接线盒 + 防反接模块</b> 三家供应商询价（阶段 0 输入）；② 草拟 <b>Charter 船长种子包</b> 合作邮件与寄样清单（第五节模板），联系首批 10 位船长。
+  </div>
+
+  <footer>
+    <p><strong>文档归属</strong> · TailFin Marine 内部执行方案（钓鱼船版 / Vessel Edition）。本方案与已交付的《商业级公司&产品介绍》《A4 招商 Sell Sheet》配套使用。所有价格、成本、复用率为基于现有 catalog 与产品架构的估算，最终以正式 BOM 报价单、认证机构文件与经销合同为准。</p>
+    <p class="small">关联文件：TailFin_Marine_商业介绍.html · TailFin_Marine_SellSheet.html · data/products.json（BOM 基准源）。</p>
+  </footer>
+
+</div>
+</body>
+</html>
