@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TailFin Marine · Company &amp; Product Introduction</title>
+<style>
+  :root{
+    --navy:#0f1e37; --teal:#0F6E56; --teal-bg:#e6f3ef; --amber:#E8A33D;
+    --gray-50:#f7f8fa; --gray-100:#eef1f5; --gray-200:#e2e7ee; --gray-600:#5b6675;
+    --ink:#1d2733; --line:#d9e0ea;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:#fff; color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.7; font-size:15px;
+  }
+  .page{max-width:920px; margin:0 auto; padding:48px 40px 64px;}
+  header.cover{border-bottom:3px solid var(--teal); padding-bottom:28px; margin-bottom:36px;}
+  .brand{display:flex; align-items:center; gap:14px; margin-bottom:18px;}
+  .logo{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--teal),#149b78);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:20px;}
+  .brand h1{font-size:22px;margin:0;color:var(--navy);letter-spacing:.3px;}
+  .brand .en{font-size:12px;color:var(--gray-600);letter-spacing:2px;text-transform:uppercase;}
+  .tagline{font-size:20px;font-weight:700;color:var(--navy);margin:6px 0 4px;}
+  .lede{color:var(--gray-600);font-size:14px;max-width:700px;}
+  section{margin:38px 0;}
+  h2{font-size:17px;color:var(--navy);margin:0 0 14px;padding-left:12px;border-left:4px solid var(--teal);letter-spacing:.3px;}
+  h3{font-size:14px;color:var(--teal);margin:18px 0 8px;}
+  p{margin:8px 0;}
+  .muted{color:var(--gray-600);font-size:13px;}
+  ul{margin:8px 0;padding-left:20px;}
+  li{margin:5px 0;}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0;}
+  .kpi{background:var(--gray-50);border:1px solid var(--line);border-radius:12px;padding:16px 14px;text-align:center;}
+  .kpi .n{font-size:22px;font-weight:800;color:var(--teal);line-height:1.1;}
+  .kpi .l{font-size:11.5px;color:var(--gray-600);margin-top:6px;}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top;}
+  th{background:var(--teal-bg);color:var(--navy);font-weight:700;}
+  tr:nth-child(even) td{background:var(--gray-50);}
+  .products{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0;}
+  .pcard{border:1px solid var(--line);border-radius:14px;padding:18px;background:#fff;}
+  .pcard h3{margin:0 0 4px;color:var(--navy);font-size:15px;}
+  .pcard .price{font-size:20px;font-weight:800;color:var(--teal);margin:6px 0 8px;}
+  .pcard .price small{font-size:12px;color:var(--gray-600);font-weight:500;}
+  .badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;background:var(--teal-bg);color:var(--teal);margin-bottom:6px;}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0;}
+  .pillar{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--gray-50);}
+  .pillar .t{font-weight:700;color:var(--navy);margin-bottom:6px;}
+  .callout{background:var(--teal-bg);border-left:4px solid var(--teal);border-radius:8px;padding:14px 18px;margin:16px 0;font-size:14px;}
+  .callout b{color:var(--teal);}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  footer{margin-top:48px;border-top:1px solid var(--line);padding-top:20px;color:var(--gray-600);font-size:12px;}
+  .src{font-size:11.5px;color:var(--gray-600);line-height:1.6;}
+  .src li{margin:3px 0;}
+  @media (max-width:720px){.page{padding:28px 18px;}.kpis,.products,.pillars,.two{grid-template-columns:1fr;}}
+  @media print{body{font-size:12px;}.page{max-width:none;padding:0 12mm;}section{break-inside:avoid;}header.cover{break-after:avoid;}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="cover">
+    <div class="brand">
+      <div class="logo">TF</div>
+      <div>
+        <h1>TailFin Marine</h1>
+        <div class="en">Powered Catch &amp; Cook Systems</div>
+      </div>
+    </div>
+    <div class="tagline">Engineered for serious anglers, everywhere.</div>
+    <p class="lede">TailFin Marine redefines "post-catch processing" — integrating scaling, filleting, vacuum sealing and off-grid power into a single modular system that rides in your truck, mounts on your deck, and stores at home. From tailgate to offshore deck, from ice-fishing tent to coastal pier, every angler can catch, process and preserve right on the spot.</p>
+  </header>
+
+  <section>
+    <h2>Executive Summary</h2>
+    <p>Global recreational fishing is undergoing structural growth: participation is hitting record highs, and spending is shifting from "entry-level gear" to "experience upgrades." Yet the long-overlooked "Clean &amp; Cook" stage is emerging as the next frontier of category innovation. Today's market is dominated by <strong>passive folding fillet tables</strong> (an HDPE surface + faucet + knife slots), forcing users to carry and manually operate separate scalers, knives and vacuum sealers — fragmented, bulky, and impossible to run off-grid.</p>
+    <p>TailFin Marine has created an entirely new category: the <strong>Powered, Modular Catch &amp; Cook System</strong>. Built on a unified base platform with a central-bay dual-slot stack, the scaler, electric fillet knife, vacuum sealer, water recirculation and off-grid battery are all plug-and-play. Customers buy the base unit once, then stack modular upgrades as their fishing style and budget evolve — creating a sustainable cycle of repeat purchases and value growth.</p>
+    <div class="callout">Core promise · <b>Catch. Clean. Cook. Anywhere.</b> — one system that turns "bringing the fish home" into "processing and preserving it right where you caught it."</div>
+  </section>
+
+  <section>
+    <h2>Market Opportunity</h2>
+    <p>Recreational fishing has grown from a regional niche hobby into a global outdoor lifestyle and experiential-spending category. Key figures from public 2025–2026 sources:</p>
+    <div class="kpis">
+      <div class="kpi"><div class="n">$14.8B</div><div class="l">Global recreational fishing equipment market (2025)</div></div>
+      <div class="kpi"><div class="n">5.7%</div><div class="l">Market CAGR through 2034</div></div>
+      <div class="kpi"><div class="n">57.9M</div><div class="l">U.S. annual anglers (2024, record high)</div></div>
+      <div class="kpi"><div class="n">140M+</div><div class="l">Active anglers in China</div></div>
+    </div>
+    <table>
+      <thead><tr><th>Region / Market</th><th>Size &amp; Growth</th><th>Key Signals</th></tr></thead>
+      <tbody>
+        <tr><td>Global Equipment</td><td>Recreational fishing equipment ~<b>$14.8B in 2025</b>, projected to reach $24.4B by 2034 (CAGR 5.7%); the broader tackle market ~$16.5B in 2025, reaching $22.1B by 2032 (CAGR 4.25%).</td><td>Lightweight, portable, modular kits favored by urban and traveling anglers.</td></tr>
+        <tr><td>United States</td><td>57.9M participants in 2024 (19% of the population, an all-time high); 5.1M first-time anglers; 21.3M women and 15.1M saltwater anglers, both records.</td><td>Driven by families and younger demographics; fishing content booming on social media.</td></tr>
+        <tr><td>Europe</td><td>Recreational fishing equipment ~$2.2B in 2025 (~15% of global, CAGR 5.0%); marine recreational fishing ~8.7M sea anglers spending €5.9B annually.</td><td>Tightening environmental regulation; "sustainable angling" now the mainstream narrative.</td></tr>
+        <tr><td>Oceania</td><td>Western Australia alone has 750,000 recreational anglers contributing A$2.4B to the economy.</td><td>Mature "fishing + tourism + community" model with strong upgrade demand.</td></tr>
+        <tr><td>China</td><td>~140M active anglers; tackle industry exceeding RMB 50B; lightweight fishing gear growing at a 17.3% CAGR (2025–2029), potentially surpassing RMB 25.4B by 2029. Over 80% of the world's tackle is made in China.</td><td>Younger base (25–44 y.o. = 46%), rise of "light angling / family fishing," rapid e-commerce vertical growth.</td></tr>
+      </tbody>
+    </table>
+    <p class="muted">Consensus trends (multiple industry white papers and media studies): ① gear evolving toward <b>lightweight, portable, modular</b> designs; ② rising penetration of <b>smart &amp; electric</b> tools (electric reels, fish finders, powered tools); ③ <b>eco &amp; sustainability</b> (biodegradable, puncture-resistant, freshness-locking) becoming purchase drivers; ④ the fusion of "fishing + camping + tourism" creating a new "post-catch processing" consumption scenario.</p>
+  </section>
+
+  <section>
+    <h2>Positioning &amp; Mission</h2>
+    <p>We deliberately removed any regional label — TailFin Marine is not built for one continent, but designed for <strong>serious anglers worldwide</strong>. Whether on North American lakes, European rivers, Australian coasts or Asian ponds, the core pain points of post-catch processing are identical: <em>fish must be processed fast, kept clean, sealed fresh, and handled off-grid</em>.</p>
+    <div class="pillars">
+      <div class="pillar"><div class="t">Borderless</div>Unified voltage and plug-adapter scheme; products designed for the certification paths of major global markets, not tied to any single region.</div>
+      <div class="pillar"><div class="t">Built Tough</div>316 marine-grade stainless steel, food-grade HDPE, splash-proof construction — validated by salt-spray and outdoor testing, meeting the durability bar of professional anglers.</div>
+      <div class="pillar"><div class="t">Modular by Design</div>One base platform; add scaling / filleting / vacuum / power modules on demand — growing with the angler from entry to pro.</div>
+    </div>
+    <p class="muted">Mission: to make "turning today's catch into tonight's dinner" possible anywhere — clean, fast, and sustainable.</p>
+  </section>
+
+  <section>
+    <h2>About TailFin Marine</h2>
+    <p>TailFin Marine is an outdoor-gear brand focused on the "post-catch processing" category. Founded by a team of fishing-obsessed engineers and product designers, we saw that the fillet tables on the market are just "a table," while the real pain points — <strong>powered processing, freshness sealing, and off-grid power</strong> — remained fragmented. So we built a "central-bay modular" architecture that compresses the entire Catch &amp; Cook workflow into one portable, packable system.</p>
+    <p>We operate on an <strong>integrated R&amp;D–manufacturing–sales model with supply-chain reuse</strong>: core structural parts leverage the mature tackle / lithium-battery / vacuum supply chains of the Pearl River Delta, delivering professional-grade quality at highly competitive cost — enabling fast rollout and localization across global markets.</p>
+    <div class="callout">We are not selling "a better table" — we are defining a <b>new category</b>. That is precisely the opportunity for distributors to claim an empty shelf and build differentiation.</div>
+  </section>
+
+  <section>
+    <h2>Product System</h2>
+    <p>The entire line is built on a unified base platform with a clear price ladder, covering the full spectrum from entry to professional, while leaving ample room for recurring accessory and consumable purchases.</p>
+    <div class="products">
+      <div class="pcard">
+        <span class="badge">LITE</span>
+        <h3>Pocket Scaler Mini</h3>
+        <div class="price">$149 <small>/ unit</small></div>
+        <p class="muted">Same 316 stainless-steel scaling head and body as the flagship; built-in 12V 2200mAh lithium battery with Type-C charging; bundled with a multi-function fish scissors + 10L folding water bag + 1680D Oxford splash-proof storage bag. Strong gifting appeal.</p>
+      </div>
+      <div class="pcard">
+        <span class="badge">STANDARD</span>
+        <h3>Tailgate Workstation Standard</h3>
+        <div class="price">$499 <small>/ unit</small></div>
+        <p class="muted">Full enclosure 80×44×26cm (dual-layer ABS+PC); 12V 100W brushed waterproof scaler; 5L/min water recirculation; HDPE measuring board; central-bay tool drawer; 12V power via cigarette-lighter socket.</p>
+      </div>
+      <div class="pcard">
+        <span class="badge">PRO</span>
+        <h3>Mobile Fish Factory Pro</h3>
+        <div class="price">$999 <small>/ unit</small></div>
+        <p class="muted">24V 200W brushless high-torque scaler + 12V reciprocating electric fillet knife; central-bay vacuum sealing ≥-75kPa; 24V 6S1P battery for ≥2 hours off-grid; BMS dual charging 110V + 12V.</p>
+      </div>
+      <div class="pcard">
+        <span class="badge">UPGRADE</span>
+        <h3>Pro Upgrade Kit</h3>
+        <div class="price">$499 <small>/ kit</small></div>
+        <p class="muted">Upgrade Standard to Pro in one step: vacuum module + 24V battery + brushless scaler + electric fillet knife. Buying the four modules separately costs $556 — the kit saves $57, matching the price of buying Pro directly.</p>
+      </div>
+    </div>
+    <h3>Accessories &amp; Consumables (12 SKUs, independent repeat purchase)</h3>
+    <p class="muted">Scaling head $29 · Puncture-resistant vacuum bags (20-pack) $19 · PU intake hose $25 · Electric fillet knife $79 · Fish scissors $15 · 12V/24V standalone scaler $89/$129 · Battery pack $149 · Vacuum module $199 · HDPE board $35 · Oxford bag $25 · Folding water bag $18 · and more. All accessories are cross-compatible across the line, forming a stream of recurring consumable and value-add revenue.</p>
+  </section>
+
+  <section>
+    <h2>Architecture &amp; Core Tech</h2>
+    <ul>
+      <li><b>Central-bay dual-slot stack (blind-mate alignment)</b>: Standard's base drawer bay stacks into Pro by adding 4 modules; power, signal and structure align in one motion — hot-swappable, no wiring.</li>
+      <li><b>316 marine-grade stainless steel</b>: scaling head and body pass a 72-hour salt-spray test — corrosion-resistant, clean cutting without damaging the flesh.</li>
+      <li><b>Wet/dry vacuum sealing ≥-75kPa</b>: a hidden liquid-collection box protects the pump; paired with puncture-resistant bags to lock freshness and prevent cross-odor.</li>
+      <li><b>Off-grid power 24V 6S1P</b>: BMS dual charging (110V AC + 12V vehicle), ≥2 hours per charge, hot-swappable.</li>
+      <li><b>Recirculating water + splash guard</b>: PC splash shield + 5L/min recirculating supply — clean hands, no wasted water.</li>
+      <li><b>Unified data layer</b>: pricing, promotions and availability managed from a single back-end source of truth, synced in real time between the storefront and e-commerce back office — easy for distributors to run localized operations.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Use Cases</h2>
+    <div class="two">
+      <div>
+        <h3>Land · Truck Tailgate / Campsite</h3>
+        <p class="muted">Park, unfold the enclosure, and scale, fillet and vacuum-seal right on the tailgate — no need to process at home, no mess inside the vehicle.</p>
+        <h3>Ice Lake · Ice-Fishing Tent</h3>
+        <p class="muted">In -20℃ conditions the battery powers everything independently; process as you catch, with hot food and sealing in one flow.</p>
+      </div>
+      <div>
+        <h3>Coastal · Boat Deck / Pier</h3>
+        <p class="muted">Mount on board, run continuously on 12V vehicle power; everything is sealed before returning to port — straight to the table.</p>
+        <h3>Freshwater · Streams &amp; Ponds</h3>
+        <p class="muted">The Mini pocket unit + folding water bag makes for light, spontaneous trips — process and pack away in seconds.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Competitive Comparison</h2>
+    <p>Today's market is dominated by <strong>passive HDPE fillet/cleaning tables</strong> — essentially "a board with a sink or knife slots." Powered scaling, vacuum sealing and off-grid power are all absent, forcing users to carry and manually operate multiple separate devices. TailFin integrates the entire workflow into one system, creating a category-level difference.</p>
+    <table>
+      <thead>
+        <tr><th>Capability</th><th>TailFin Standard / Pro</th><th>Goplus Folding Table</th><th>MAGMA Bait/Filet Mate</th><th>RAILBLAZA / Classic HDPE</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Form factor</td><td>Powered modular Catch &amp; Cook system</td><td>Folding sink table</td><td>HDPE fillet board</td><td>Marine fillet board</td></tr>
+        <tr><td>Powered scaling</td><td><b>✓ 12V/24V electric scaler</b></td><td>✗ None</td><td>✗ None</td><td>✗ None</td></tr>
+        <tr><td>Electric filleting</td><td><b>✓ Reciprocating knife (Pro)</b></td><td>✗ Manual</td><td>✗ Manual</td><td>✗ Manual</td></tr>
+        <tr><td>Vacuum sealing</td><td><b>✓ Central-bay ≥-75kPa</b></td><td>✗ None</td><td>✗ None</td><td>✗ None</td></tr>
+        <tr><td>Off-grid power</td><td><b>✓ 24V battery ≥2h + dual charge</b></td><td>✗ Needs mains water/no power</td><td>✗ None</td><td>✗ None</td></tr>
+        <tr><td>Water / recirculation</td><td>✓ 5L/min recirc + splash guard</td><td>△ Garden-hose hookup</td><td>✗ None</td><td>✗ None</td></tr>
+        <tr><td>Modular upgrade</td><td><b>✓ Base→Pro plug-and-play</b></td><td>✗ Single form</td><td>✗ Single form</td><td>✗ Single form</td></tr>
+        <tr><td>Materials</td><td>316 stainless + food-grade HDPE + ABS/PC</td><td>HDPE + powder-coated steel legs</td><td>UV-stabilized HDPE</td><td>HDPE</td></tr>
+        <tr><td>Reference retail price</td><td>$499 / $999 (full system)</td><td>~$93</td><td>~$66–$400</td><td>~$95–$120</td></tr>
+        <tr><td>Repeat-purchase ecosystem</td><td><b>✓ 12 accessories + upgrade kit</b></td><td>△ Minimal</td><td>△ Mounts only</td><td>△ Mounts only</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">Bottom line: competitors sell "a better table"; TailFin delivers "a complete post-catch processing system." The price looks higher, but it is benchmarked against the combined cost of "fillet table + electric scaler + electric knife + vacuum sealer + portable power" — bought once, plug-and-play, and off-grid capable. <b>It is simply not the same category of competition.</b></div>
+  </section>
+
+  <section>
+    <h2>Why Partner With Us</h2>
+    <div class="pillars">
+      <div class="pillar"><div class="t">Empty Category</div>No "powered modular post-catch processing" competitor exists yet — you claim an empty shelf and mindshare with a differentiated product.</div>
+      <div class="pillar"><div class="t">High Repeat</div>12 accessories/consumables + upgrade kit create recurring revenue; customer lifetime value far exceeds single-item sales.</div>
+      <div class="pillar"><div class="t">Price Ladder</div>Full $149–$999 coverage — entry drives traffic, flagship builds image, upgrade kit lifts basket size.</div>
+    </div>
+    <ul>
+      <li><b>Territory protection</b>: agent and dealer tiers segmented by market to safeguard partner interests.</li>
+      <li><b>Marketing assets</b>: multilingual product/scene imagery, video and e-commerce detail-page templates to lower localization barriers.</li>
+      <li><b>Flexible supply</b>: mature Pearl River Delta supply chain supports small trial orders and fast replenishment, keeping inventory risk in check.</li>
+      <li><b>Certification support</b>: assistance with compliance and certification paths per target market (CE / FCC / RCM, etc.).</li>
+      <li><b>Data collaboration</b>: open catalog and pricing-management interfaces to support local promotions and availability operations.</li>
+    </ul>
+    <div class="callout">The value to end customers is equally clear: <b>time-saving, clean, freshness-locked, off-grid</b> — turning "processing fish" from a chore into an extension of the fun of fishing.</div>
+  </section>
+
+  <section>
+    <h2>Dealer Policy &amp; Margin Model</h2>
+    <p>We use a clear three-tier pricing structure, with prices stepping down as tier and commitment volume increase — protecting channel profit and territorial order. The table below is an <strong>illustrative discount and margin model</strong>; final terms are governed by the formal quotation and contract.</p>
+    <table>
+      <thead>
+        <tr><th>Channel Tier</th><th>Buy Price (% of MSRP)</th><th>Channel Margin</th><th>First-Order MOQ</th><th>Annual Rebate</th><th>Benefits</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>Authorized Retailer</b></td><td>70% MSRP</td><td>~30%</td><td>10 units / mixed</td><td>—</td><td>Official assets + training</td></tr>
+        <tr><td><b>Regional Dealer</b></td><td>60% MSRP</td><td>~40%</td><td>50 units</td><td>2–4% of sales</td><td>Sub-region exclusivity + priority restock</td></tr>
+        <tr><td><b>Country Distributor</b></td><td>50% MSRP</td><td>~50%</td><td>200 units / full container</td><td>3–6% of sales</td><td>Territory exclusivity + certification help + co-marketing fund</td></tr>
+      </tbody>
+    </table>
+    <h3>Margin Example (Country Distributor buying at 50% MSRP)</h3>
+    <table>
+      <thead>
+        <tr><th>Model</th><th>MSRP</th><th>Distributor Price</th><th>Margin / Unit</th><th>Margin %</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Pocket Scaler Mini</td><td>$149</td><td>$74.5</td><td>$74.5</td><td>50%</td></tr>
+        <tr><td>Tailgate Workstation Standard</td><td>$499</td><td>$249.5</td><td>$249.5</td><td>50%</td></tr>
+        <tr><td>Mobile Fish Factory Pro</td><td>$999</td><td>$499.5</td><td>$499.5</td><td>50%</td></tr>
+        <tr><td>Pro Upgrade Kit</td><td>$499</td><td>$249.5</td><td>$249.5</td><td>50%</td></tr>
+        <tr><td>Accessories / Consumables (12 SKUs)</td><td>$15–$199</td><td>~45% MSRP</td><td>—</td><td><b>~55%</b></td></tr>
+      </tbody>
+    </table>
+    <div class="callout">Sample full-container mix (200 units): 100×Standard + 60×Pro + 40×Kit — total MSRP ~<b>$149,760</b>, distributor cost ~<b>$74,880</b>, potential channel margin ~<b>$74,880</b> — before counting the recurring revenue from high-margin accessories and consumables.</div>
+    <ul>
+      <li><b>Price protection</b>: unified MSRP and MAP (minimum advertised price) policy prevents intra-channel price wars and protects margins at every tier.</li>
+      <li><b>Territory exclusivity</b>: distributors receive exclusive rights within an agreed territory, with annual sales targets and minimum purchase commitments.</li>
+      <li><b>Terms &amp; first order</b>: first order prepaid; credit terms negotiable after factory audit; small trial orders available to lower the barrier to entry.</li>
+      <li><b>Market Development Fund (MDF)</b>: qualifying distributors receive a percentage of sales toward marketing (trade shows, localized advertising, KOLs).</li>
+      <li><b>Certification &amp; after-sales</b>: compliance assistance per target market (CE / FCC / RCM, etc.); spare-parts kits and warranty policy to support local service.</li>
+    </ul>
+    <p class="muted">Note: the discount rates, MOQs and rebate percentages above are illustrative ranges used as a starting point for modeling and negotiation; actual terms are determined case-by-case based on market, committed volume and depth of partnership.</p>
+  </section>
+
+  <footer>
+    <p><strong>Partnership Inquiries</strong> · TailFin Marine welcomes partnerships with global distributors, outdoor retail chains, tackle specialty stores and tourism channels. Contact us for quotations, dealer policy and sample programs.</p>
+    <p class="src"><strong>Data Sources (public, 2025–2026):</strong></p>
+    <ul class="src">
+      <li>Dimension Market Research — Recreational Fishing Equipment Market 2025–2034 (global equipment $14.8B→$24.4B, CAGR 5.7%).</li>
+      <li>PMarketResearch — Fishing Market 2025 ($16.5B→$22.08B, CAGR 4.25%).</li>
+      <li>RBFF &amp; Outdoor Foundation — 2025 Special Report on Fishing (U.S. 57.9M anglers in 2024, a record).</li>
+      <li>European Anglers Alliance / UEA Research — European marine recreational fishing, 8.7M sea anglers, €5.9B annual spend.</li>
+      <li>FRDC / Recfishwest — Western Australia, 750,000 recreational anglers, A$2.4B economy.</li>
+      <li>Xinhua / Sunpu / LeadLeo / Frost &amp; Sullivan — China 140M anglers, lightweight gear CAGR 17.3%, global tackle ~RMB 194.1B by 2029.</li>
+      <li>Competitor references: Goplus folding fillet table ~$93, MAGMA Bait/Filet Mate ~$66–$400, RAILBLAZA fillet table ~$95–$120 (official / retail public pricing).</li>
+    </ul>
+    <p class="src">Note: This document is a business-introduction draft. Market size and growth figures cite public third-party research; product specs and prices reflect the current catalog. Final terms are governed by the formal quotation and contract.</p>
+  </footer>
+
+</div>
+</body>
+</html>
